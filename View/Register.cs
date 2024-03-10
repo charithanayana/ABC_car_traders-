@@ -38,10 +38,22 @@ namespace ABC_car_traders.View
             {
                 MessageBox.Show("Failed to insert user details: " + ex.Message);
             }
-            finally 
+            finally
             {
                 dbManager.CloseConnection();
             }
+            MessageBox.Show("Register Succesfully");
+        }
+
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBackLogin_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

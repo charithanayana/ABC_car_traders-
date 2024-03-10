@@ -46,7 +46,8 @@ namespace ABC_car_traders.View
             panel1 = new Panel();
             label8 = new Label();
             btnRegister = new Button();
-            button2 = new Button();
+            btnClear = new Button();
+            btnBackLogin = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -200,17 +201,32 @@ namespace ABC_car_traders.View
             btnRegister.UseVisualStyleBackColor = false;
             btnRegister.Click += btnRegister_Click;
             // 
-            // button2
+            // btnClear
             // 
-            button2.BackColor = Color.Yellow;
-            button2.Cursor = Cursors.Hand;
-            button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(435, 377);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 29);
-            button2.TabIndex = 16;
-            button2.Text = "Clear";
-            button2.UseVisualStyleBackColor = false;
+            btnClear.BackColor = Color.Yellow;
+            btnClear.Cursor = Cursors.Hand;
+            btnClear.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnClear.Location = new Point(435, 377);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(94, 29);
+            btnClear.TabIndex = 16;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = false;
+            btnClear.Click += btnClear_Click;
+            // 
+            // btnBackLogin
+            // 
+            btnBackLogin.BackColor = Color.FromArgb(0, 0, 192);
+            btnBackLogin.Cursor = Cursors.Hand;
+            btnBackLogin.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBackLogin.ForeColor = Color.White;
+            btnBackLogin.Location = new Point(260, 377);
+            btnBackLogin.Name = "btnBackLogin";
+            btnBackLogin.Size = new Size(115, 29);
+            btnBackLogin.TabIndex = 17;
+            btnBackLogin.Text = "Back to Login";
+            btnBackLogin.UseVisualStyleBackColor = false;
+            btnBackLogin.Click += btnBackLogin_Click;
             // 
             // Register
             // 
@@ -218,7 +234,8 @@ namespace ABC_car_traders.View
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 0, 192);
             ClientSize = new Size(800, 450);
-            Controls.Add(button2);
+            Controls.Add(btnBackLogin);
+            Controls.Add(btnClear);
             Controls.Add(btnRegister);
             Controls.Add(panel1);
             Controls.Add(txtConfirmPassword);
@@ -259,6 +276,7 @@ namespace ABC_car_traders.View
         private Panel panel1;
         private Label label8;
         private Button btnRegister;
-        private Button button2;
+        private Button btnClear;
+        private Button btnBackLogin;
     }
 }
