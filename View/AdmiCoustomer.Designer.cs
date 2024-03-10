@@ -35,13 +35,14 @@
             textBox11 = new TextBox();
             label14 = new Label();
             dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column10 = new DataGridViewTextBoxColumn();
-            Column11 = new DataGridViewTextBoxColumn();
+            id = new DataGridViewTextBoxColumn();
+            firstName = new DataGridViewTextBoxColumn();
+            LName = new DataGridViewTextBoxColumn();
+            mobile = new DataGridViewTextBoxColumn();
+            email = new DataGridViewTextBoxColumn();
+            address = new DataGridViewTextBoxColumn();
+            username = new DataGridViewTextBoxColumn();
+            password = new DataGridViewTextBoxColumn();
             panel7.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -109,61 +110,69 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column5, Column4, Column10, Column11 });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { id, firstName, LName, mobile, email, address, username, password });
             dataGridView1.Location = new Point(1, 115);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(797, 505);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // Column1
+            // id
             // 
-            Column1.HeaderText = "CustomerID";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
-            Column1.Width = 125;
+            id.HeaderText = "ID";
+            id.MinimumWidth = 6;
+            id.Name = "id";
+            id.Width = 125;
             // 
-            // Column2
+            // firstName
             // 
-            Column2.HeaderText = "CoustomerName";
-            Column2.MinimumWidth = 6;
-            Column2.Name = "Column2";
-            Column2.Width = 125;
+            firstName.HeaderText = "First Name";
+            firstName.MinimumWidth = 6;
+            firstName.Name = "firstName";
+            firstName.Width = 125;
             // 
-            // Column3
+            // LName
             // 
-            Column3.HeaderText = "CoustomerMobile";
-            Column3.MinimumWidth = 6;
-            Column3.Name = "Column3";
-            Column3.Width = 125;
+            LName.HeaderText = "Last Name";
+            LName.MinimumWidth = 6;
+            LName.Name = "LName";
+            LName.Width = 125;
             // 
-            // Column5
+            // mobile
             // 
-            Column5.HeaderText = "CoustomerEmail";
-            Column5.MinimumWidth = 6;
-            Column5.Name = "Column5";
-            Column5.Width = 125;
+            mobile.HeaderText = "Mobile";
+            mobile.MinimumWidth = 6;
+            mobile.Name = "mobile";
+            mobile.Width = 125;
             // 
-            // Column4
+            // email
             // 
-            Column4.HeaderText = "CoustomerAddress";
-            Column4.MinimumWidth = 6;
-            Column4.Name = "Column4";
-            Column4.Width = 125;
+            email.HeaderText = "Email";
+            email.MinimumWidth = 6;
+            email.Name = "email";
+            email.Width = 125;
             // 
-            // Column10
+            // address
             // 
-            Column10.HeaderText = "CoustomerUserName";
-            Column10.MinimumWidth = 6;
-            Column10.Name = "Column10";
-            Column10.Width = 125;
+            address.HeaderText = "Address";
+            address.MinimumWidth = 6;
+            address.Name = "address";
+            address.Width = 125;
             // 
-            // Column11
+            // username
             // 
-            Column11.HeaderText = "CoustomerPassword";
-            Column11.MinimumWidth = 6;
-            Column11.Name = "Column11";
-            Column11.Width = 125;
+            username.HeaderText = "UserName";
+            username.MinimumWidth = 6;
+            username.Name = "username";
+            username.Width = 125;
+            // 
+            // password
+            // 
+            password.HeaderText = "Password";
+            password.MinimumWidth = 6;
+            password.Name = "password";
+            password.Width = 125;
             // 
             // AdmiCoustomer
             // 
@@ -193,12 +202,13 @@
         private TextBox textBox11;
         private Label label14;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column10;
-        private DataGridViewTextBoxColumn Column11;
+        private DataGridViewTextBoxColumn id;
+        private DataGridViewTextBoxColumn firstName;
+        private DataGridViewTextBoxColumn LName;
+        private DataGridViewTextBoxColumn mobile;
+        private DataGridViewTextBoxColumn email;
+        private DataGridViewTextBoxColumn address;
+        private DataGridViewTextBoxColumn username;
+        private DataGridViewTextBoxColumn password;
     }
 }
