@@ -31,6 +31,8 @@
             panel7 = new Panel();
             tabControl1 = new TabControl();
             tabPage2 = new TabPage();
+            button1 = new Button();
+            btnLogin = new Button();
             label15 = new Label();
             textBox11 = new TextBox();
             label14 = new Label();
@@ -43,7 +45,7 @@
             address = new DataGridViewTextBoxColumn();
             username = new DataGridViewTextBoxColumn();
             password = new DataGridViewTextBoxColumn();
-            btnLogin = new Button();
+            Action = new DataGridViewButtonColumn();
             panel7.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -71,6 +73,7 @@
             // tabPage2
             // 
             tabPage2.BackColor = Color.FromArgb(192, 0, 192);
+            tabPage2.Controls.Add(button1);
             tabPage2.Controls.Add(btnLogin);
             tabPage2.Controls.Add(label15);
             tabPage2.Controls.Add(textBox11);
@@ -82,6 +85,32 @@
             tabPage2.Size = new Size(797, 620);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "View All Coustomer";
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Blue;
+            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(371, 60);
+            button1.Name = "button1";
+            button1.Size = new Size(135, 35);
+            button1.TabIndex = 8;
+            button1.Text = "Login";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += deleteRecordBtn;
+            // 
+            // btnLogin
+            // 
+            btnLogin.BackColor = Color.Blue;
+            btnLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogin.ForeColor = Color.White;
+            btnLogin.Location = new Point(230, 62);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(135, 35);
+            btnLogin.TabIndex = 7;
+            btnLogin.Text = "Login";
+            btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += update_button;
             // 
             // label15
             // 
@@ -112,13 +141,14 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { id, firstName, LName, mobile, email, address, username, password });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { id, firstName, LName, mobile, email, address, username, password, Action });
             dataGridView1.GridColor = SystemColors.WindowText;
             dataGridView1.Location = new Point(1, 115);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(797, 505);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellClick += cell_click_delete_btn;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // id
@@ -177,18 +207,14 @@
             password.Name = "password";
             password.Width = 125;
             // 
-            // btnLogin
+            // Action
             // 
-            btnLogin.BackColor = Color.Blue;
-            btnLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnLogin.ForeColor = Color.White;
-            btnLogin.Location = new Point(230, 62);
-            btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(135, 35);
-            btnLogin.TabIndex = 7;
-            btnLogin.Text = "Login";
-            btnLogin.UseVisualStyleBackColor = false;
-            btnLogin.Click += update_button;
+            Action.HeaderText = "Action";
+            Action.MinimumWidth = 6;
+            Action.Name = "Action";
+            Action.Text = "Delete";
+            Action.UseColumnTextForButtonValue = true;
+            Action.Width = 125;
             // 
             // AdmiCoustomer
             // 
@@ -218,6 +244,8 @@
         private TextBox textBox11;
         private Label label14;
         private DataGridView dataGridView1;
+        private Button btnLogin;
+        private Button button1;
         private DataGridViewTextBoxColumn id;
         private DataGridViewTextBoxColumn firstName;
         private DataGridViewTextBoxColumn LName;
@@ -226,6 +254,6 @@
         private DataGridViewTextBoxColumn address;
         private DataGridViewTextBoxColumn username;
         private DataGridViewTextBoxColumn password;
-        private Button btnLogin;
+        private DataGridViewButtonColumn Action;
     }
 }

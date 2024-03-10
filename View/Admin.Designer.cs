@@ -73,11 +73,11 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Sci Fied Outline", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label8.ForeColor = SystemColors.Control;
             label8.Location = new Point(3, 44);
             label8.Name = "label8";
-            label8.Size = new Size(206, 18);
+            label8.Size = new Size(148, 18);
             label8.TabIndex = 6;
             label8.Text = "ABC CAR TRADERS";
             // 
@@ -272,9 +272,9 @@
             // 
             // mainpanel
             // 
-            mainpanel.Location = new Point(380, 0);
+            mainpanel.Location = new Point(379, 0);
             mainpanel.Name = "mainpanel";
-            mainpanel.Size = new Size(813, 653);
+            mainpanel.Size = new Size(807, 653);
             mainpanel.TabIndex = 19;
             mainpanel.Paint += panel3_Paint;
             // 
@@ -282,7 +282,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1193, 651);
+            ClientSize = new Size(1179, 651);
             Controls.Add(mainpanel);
             Controls.Add(panel2);
             Controls.Add(panel1);

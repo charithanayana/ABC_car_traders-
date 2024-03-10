@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using Microsoft.VisualBasic.ApplicationServices;
 using MySql.Data.MySqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
@@ -21,26 +23,39 @@ namespace ABC_car_traders.View
             GetCustomerDetail();
         }
 
+        private void deleteRecordBtn(object sender, EventArgs e)
+        {
+
+        }
+
         private void update_button(object sender, EventArgs e)
         {
             DBManager dbManager = DBManager.GetInstance();
-            for (int item = 0; item<dataGridView1.Rows.Count; item++)
+            try
             {
-                string updateQuery = "UPDATE user SET user_name = @userName, passwd = @password, first_name = @firstName, last_name = @lastName, address = @address WHERE id = @userId";
-                dbManager.OpenConnection();
-                MySqlCommand cmd = dbManager.GetMysqlCommand(updateQuery);
-                cmd.Parameters.AddWithValue("@firstName", dataGridView1.Rows[item].Cells[1].Value);//first name
-                cmd.Parameters.AddWithValue("@lastName", dataGridView1.Rows[item].Cells[2].Value);//last name
-                //cmd.Parameters.AddWithValue("@userName", dataGridView1.Rows[item].Cells[3].Value);//mobile
-                //cmd.Parameters.AddWithValue("@userName", dataGridView1.Rows[item].Cells[4].Value);//email
-                cmd.Parameters.AddWithValue("@address", dataGridView1.Rows[item].Cells[5].Value);//address
-                cmd.Parameters.AddWithValue("@userName", dataGridView1.Rows[item].Cells[6].Value);//username
-                cmd.Parameters.AddWithValue("@password", dataGridView1.Rows[item].Cells[7].Value);//password
-                cmd.Parameters.AddWithValue("@userId", dataGridView1.Rows[item].Cells[0].Value);//id
-                cmd.ExecuteNonQuery();
-                dbManager.CloseConnection();
+                for (int item = 0; item < dataGridView1.Rows.Count; item++)
+                {
+                    string updateQuery = "UPDATE user SET user_name = @userName, passwd = @password, first_name = @firstName, last_name = @lastName, address = @address WHERE id = @userId";
+                    dbManager.OpenConnection();
+                    MySqlCommand cmd = dbManager.GetMysqlCommand(updateQuery);
+                    cmd.Parameters.AddWithValue("@firstName", dataGridView1.Rows[item].Cells[1].Value);//first name
+                    cmd.Parameters.AddWithValue("@lastName", dataGridView1.Rows[item].Cells[2].Value);//last name
+                    //cmd.Parameters.AddWithValue("@userName", dataGridView1.Rows[item].Cells[3].Value);//mobile
+                    //cmd.Parameters.AddWithValue("@userName", dataGridView1.Rows[item].Cells[4].Value);//email
+                    cmd.Parameters.AddWithValue("@address", dataGridView1.Rows[item].Cells[5].Value);//address
+                    cmd.Parameters.AddWithValue("@userName", dataGridView1.Rows[item].Cells[6].Value);//username
+                    cmd.Parameters.AddWithValue("@password", dataGridView1.Rows[item].Cells[7].Value);//password
+                    cmd.Parameters.AddWithValue("@userId", dataGridView1.Rows[item].Cells[0].Value);//id
+                    cmd.ExecuteNonQuery();
+                    dbManager.CloseConnection();
+                }
                 MessageBox.Show("Row has been updated!");
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to udpate user details: " + ex.Message);
+            }
+            finally { }
         }
 
         private void GetCustomerDetail()
@@ -60,13 +75,28 @@ namespace ABC_car_traders.View
                 {
                     while (dataReader.Read())
                     {
+                        DataGridViewButtonColumn deleteButton = new DataGridViewButtonColumn();
+                        deleteButton.Name = "Delete";
+
+                        DataGridViewButtonColumn updateButton = new DataGridViewButtonColumn();
+                        updateButton.Name = "Update";
+
+                        /*DataGridViewButtonCell deleteButton = new DataGridViewButtonCell();
+                        deleteButton.Value = "Delete";
+                        DataGridViewButtonCell updateButton = new DataGridViewButtonCell();
+                        updateButton.Value = "Delete";*/
+
                         string id = dataReader["id"].ToString();
                         string username = dataReader["user_name"].ToString();
                         string password = dataReader["passwd"].ToString();
                         string firstName = dataReader["first_name"].ToString();
                         string lastName = dataReader["last_name"].ToString();
                         string address = dataReader["address"].ToString();
+
+                        DataGridViewButtonCell column = new DataGridViewButtonCell();
+                        column.FlatStyle = FlatStyle.Flat;
                         dataGridView1.Rows.Add(id, firstName, lastName, "", "", address, username, password);
+
                         dataGridView1.AllowUserToAddRows = false;
                     }
                 }
@@ -92,6 +122,36 @@ namespace ABC_car_traders.View
 
         }
 
-        
+        private void cell_click_delete_btn(object sender, DataGridViewCellEventArgs e)
+        {
+            DBManager dbManager = DBManager.GetInstance();
+            try
+            {
+                if (dataGridView1.Columns[e.ColumnIndex].Name == "Action")
+                {
+                    if (MessageBox.Show("Are you sure to delete?", "Delete Record!", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        string deleteQuery = "DELETE FROM user WHERE id = @userId";
+                        dbManager.OpenConnection();
+                        int id = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["ID"].FormattedValue.ToString());
+                        MySqlCommand cmd = dbManager.GetMysqlCommand(deleteQuery);
+                        cmd.Parameters.AddWithValue("@userId", id);
+                        cmd.ExecuteNonQuery();
+                        dbManager.CloseConnection();
+                        MessageBox.Show("Record deleted ");
+                        dataGridView1.Rows.Clear();
+                        GetCustomerDetail();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally 
+            { 
+                dbManager.CloseConnection(); 
+            }
+        }
     }
 }
