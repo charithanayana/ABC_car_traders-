@@ -29,10 +29,24 @@ namespace ABC_car_traders.View
             DBManager dbManager = DBManager.GetInstance();
             try
             {
-                string insertQuery = "INSERT INTO user (user_name, passwd, user_type, first_name, last_name, address) values('"
-                    + userName + "', '" + password + "', 'CUSTOMER', '" + firstNname + "', '" + lastName + "', '" + address + "')";
-                dbManager.OpenConnection();
-                dbManager.Insert(insertQuery);
+                if (password.Equals(confirmPassword))
+                {
+                    string insertQuery = "INSERT INTO user (user_name, passwd, user_type, first_name, last_name, address) values('"
+                        + userName + "', '" + password + "', 'CUSTOMER', '" + firstNname + "', '" + lastName + "', '" + address + "')";
+                    dbManager.OpenConnection();
+                    dbManager.Insert(insertQuery);
+                    txtFirstName.Clear();
+                    txtLastName.Clear();
+                    txtAddress.Clear();
+                    txtUserName.Clear();
+                    txtPassword.Clear();
+                    txtConfirmPassword.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Confirm Password incorrect");
+                    return;
+                }
             }
             catch (Exception ex)
             {
