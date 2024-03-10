@@ -31,19 +31,19 @@
             panel7 = new Panel();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
-            button1 = new Button();
+            btnSave = new Button();
             label12 = new Label();
-            textBox10 = new TextBox();
+            txtDescription = new TextBox();
             label10 = new Label();
             label9 = new Label();
-            textBox9 = new TextBox();
-            textBox8 = new TextBox();
+            txtPrice = new TextBox();
+            txtQuantity = new TextBox();
             label5 = new Label();
             label4 = new Label();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
+            txtName = new TextBox();
+            txtModel = new TextBox();
             label2 = new Label();
-            textBox1 = new TextBox();
+            txtBrand = new TextBox();
             label14 = new Label();
             tabPage2 = new TabPage();
             label15 = new Label();
@@ -51,13 +51,13 @@
             label16 = new Label();
             dataGridView1 = new DataGridView();
             label1 = new Label();
-            Column1 = new DataGridViewTextBoxColumn();
+            Id = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
+            Description = new DataGridViewTextBoxColumn();
             Column11 = new DataGridViewTextBoxColumn();
             Column12 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
             panel7.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -88,19 +88,19 @@
             // tabPage1
             // 
             tabPage1.BackColor = Color.FromArgb(192, 0, 192);
-            tabPage1.Controls.Add(button1);
+            tabPage1.Controls.Add(btnSave);
             tabPage1.Controls.Add(label12);
-            tabPage1.Controls.Add(textBox10);
+            tabPage1.Controls.Add(txtDescription);
             tabPage1.Controls.Add(label10);
             tabPage1.Controls.Add(label9);
-            tabPage1.Controls.Add(textBox9);
-            tabPage1.Controls.Add(textBox8);
+            tabPage1.Controls.Add(txtPrice);
+            tabPage1.Controls.Add(txtQuantity);
             tabPage1.Controls.Add(label5);
             tabPage1.Controls.Add(label4);
-            tabPage1.Controls.Add(textBox3);
-            tabPage1.Controls.Add(textBox2);
+            tabPage1.Controls.Add(txtName);
+            tabPage1.Controls.Add(txtModel);
             tabPage1.Controls.Add(label2);
-            tabPage1.Controls.Add(textBox1);
+            tabPage1.Controls.Add(txtBrand);
             tabPage1.Controls.Add(label14);
             tabPage1.Location = new Point(4, 29);
             tabPage1.Name = "tabPage1";
@@ -110,16 +110,17 @@
             tabPage1.Text = "Add Spare Parts";
             tabPage1.Click += tabPage1_Click;
             // 
-            // button1
+            // btnSave
             // 
-            button1.BackColor = Color.Transparent;
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(536, 537);
-            button1.Name = "button1";
-            button1.Size = new Size(149, 48);
-            button1.TabIndex = 23;
-            button1.Text = "Save";
-            button1.UseVisualStyleBackColor = false;
+            btnSave.BackColor = Color.Transparent;
+            btnSave.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSave.Location = new Point(536, 537);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(149, 48);
+            btnSave.TabIndex = 23;
+            btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
             // 
             // label12
             // 
@@ -130,13 +131,13 @@
             label12.TabIndex = 22;
             label12.Text = "Description";
             // 
-            // textBox10
+            // txtDescription
             // 
-            textBox10.Location = new Point(85, 256);
-            textBox10.Multiline = true;
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(600, 119);
-            textBox10.TabIndex = 21;
+            txtDescription.Location = new Point(85, 256);
+            txtDescription.Multiline = true;
+            txtDescription.Name = "txtDescription";
+            txtDescription.Size = new Size(600, 119);
+            txtDescription.TabIndex = 21;
             // 
             // label10
             // 
@@ -156,19 +157,19 @@
             label9.TabIndex = 17;
             label9.Text = "QTY";
             // 
-            // textBox9
+            // txtPrice
             // 
-            textBox9.Location = new Point(411, 423);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(274, 27);
-            textBox9.TabIndex = 16;
+            txtPrice.Location = new Point(411, 423);
+            txtPrice.Name = "txtPrice";
+            txtPrice.Size = new Size(274, 27);
+            txtPrice.TabIndex = 16;
             // 
-            // textBox8
+            // txtQuantity
             // 
-            textBox8.Location = new Point(82, 423);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(277, 27);
-            textBox8.TabIndex = 15;
+            txtQuantity.Location = new Point(82, 423);
+            txtQuantity.Name = "txtQuantity";
+            txtQuantity.Size = new Size(277, 27);
+            txtQuantity.TabIndex = 15;
             // 
             // label5
             // 
@@ -188,19 +189,19 @@
             label4.TabIndex = 7;
             label4.Text = "Model";
             // 
-            // textBox3
+            // txtName
             // 
-            textBox3.Location = new Point(82, 170);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(603, 27);
-            textBox3.TabIndex = 5;
+            txtName.Location = new Point(82, 170);
+            txtName.Name = "txtName";
+            txtName.Size = new Size(603, 27);
+            txtName.TabIndex = 5;
             // 
-            // textBox2
+            // txtModel
             // 
-            textBox2.Location = new Point(408, 91);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(277, 27);
-            textBox2.TabIndex = 3;
+            txtModel.Location = new Point(408, 91);
+            txtModel.Name = "txtModel";
+            txtModel.Size = new Size(277, 27);
+            txtModel.TabIndex = 3;
             // 
             // label2
             // 
@@ -211,12 +212,12 @@
             label2.TabIndex = 2;
             label2.Text = "Brand";
             // 
-            // textBox1
+            // txtBrand
             // 
-            textBox1.Location = new Point(82, 91);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(277, 27);
-            textBox1.TabIndex = 1;
+            txtBrand.Location = new Point(82, 91);
+            txtBrand.Name = "txtBrand";
+            txtBrand.Size = new Size(277, 27);
+            txtBrand.TabIndex = 1;
             // 
             // label14
             // 
@@ -271,7 +272,7 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column4, Column5, Column11, Column12, Column3 });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Id, Column2, Column4, Column5, Description, Column11, Column12 });
             dataGridView1.Location = new Point(1, 115);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
@@ -288,12 +289,12 @@
             label1.TabIndex = 21;
             label1.Text = "Manage Parts";
             // 
-            // Column1
+            // Id
             // 
-            Column1.HeaderText = "SparePartID";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
-            Column1.Width = 125;
+            Id.HeaderText = "Id";
+            Id.MinimumWidth = 6;
+            Id.Name = "Id";
+            Id.Width = 125;
             // 
             // Column2
             // 
@@ -316,6 +317,13 @@
             Column5.Name = "Column5";
             Column5.Width = 125;
             // 
+            // Description
+            // 
+            Description.HeaderText = "Description";
+            Description.MinimumWidth = 6;
+            Description.Name = "Description";
+            Description.Width = 125;
+            // 
             // Column11
             // 
             Column11.HeaderText = "Quantity";
@@ -329,13 +337,6 @@
             Column12.MinimumWidth = 6;
             Column12.Name = "Column12";
             Column12.Width = 125;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Description";
-            Column3.MinimumWidth = 6;
-            Column3.Name = "Column3";
-            Column3.Width = 125;
             // 
             // AdminParts
             // 
@@ -364,31 +365,31 @@
         private Label label1;
         private TabControl tabControl1;
         private TabPage tabPage1;
-        private Button button1;
+        private Button btnSave;
         private Label label12;
-        private TextBox textBox10;
+        private TextBox txtDescription;
         private Label label10;
         private Label label9;
-        private TextBox textBox9;
-        private TextBox textBox8;
+        private TextBox txtPrice;
+        private TextBox txtQuantity;
         private Label label5;
         private Label label4;
-        private TextBox textBox3;
-        private TextBox textBox2;
+        private TextBox txtName;
+        private TextBox txtModel;
         private Label label2;
-        private TextBox textBox1;
+        private TextBox txtBrand;
         private Label label14;
         private TabPage tabPage2;
         private Label label15;
         private TextBox textBox11;
         private Label label16;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Description;
         private DataGridViewTextBoxColumn Column11;
         private DataGridViewTextBoxColumn Column12;
-        private DataGridViewTextBoxColumn Column3;
     }
 }
