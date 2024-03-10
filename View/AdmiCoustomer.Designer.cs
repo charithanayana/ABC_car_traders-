@@ -43,6 +43,7 @@
             address = new DataGridViewTextBoxColumn();
             username = new DataGridViewTextBoxColumn();
             password = new DataGridViewTextBoxColumn();
+            btnLogin = new Button();
             panel7.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -70,6 +71,7 @@
             // tabPage2
             // 
             tabPage2.BackColor = Color.FromArgb(192, 0, 192);
+            tabPage2.Controls.Add(btnLogin);
             tabPage2.Controls.Add(label15);
             tabPage2.Controls.Add(textBox11);
             tabPage2.Controls.Add(label14);
@@ -111,6 +113,7 @@
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { id, firstName, LName, mobile, email, address, username, password });
+            dataGridView1.GridColor = SystemColors.WindowText;
             dataGridView1.Location = new Point(1, 115);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
@@ -174,6 +177,19 @@
             password.Name = "password";
             password.Width = 125;
             // 
+            // btnLogin
+            // 
+            btnLogin.BackColor = Color.Blue;
+            btnLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogin.ForeColor = Color.White;
+            btnLogin.Location = new Point(230, 62);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(135, 35);
+            btnLogin.TabIndex = 7;
+            btnLogin.Text = "Login";
+            btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += update_button;
+            // 
             // AdmiCoustomer
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -210,5 +226,6 @@
         private DataGridViewTextBoxColumn address;
         private DataGridViewTextBoxColumn username;
         private DataGridViewTextBoxColumn password;
+        private Button btnLogin;
     }
 }
