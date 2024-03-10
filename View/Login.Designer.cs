@@ -57,11 +57,11 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Sci Fied Outline", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = SystemColors.Control;
             label4.Location = new Point(4, 87);
             label4.Name = "label4";
-            label4.Size = new Size(206, 18);
+            label4.Size = new Size(148, 18);
             label4.TabIndex = 6;
             label4.Text = "ABC CAR TRADERS";
             // 
@@ -123,6 +123,7 @@
             button1.TabIndex = 6;
             button1.Text = "Login";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // checkBox1
             // 
@@ -179,6 +180,7 @@
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            Load += Login_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);

@@ -71,11 +71,11 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Sci Fied Outline", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label8.ForeColor = SystemColors.Control;
             label8.Location = new Point(3, 44);
             label8.Name = "label8";
-            label8.Size = new Size(206, 18);
+            label8.Size = new Size(148, 18);
             label8.TabIndex = 6;
             label8.Text = "ABC CAR TRADERS";
             // 
@@ -119,6 +119,7 @@
             label9.Size = new Size(72, 25);
             label9.TabIndex = 30;
             label9.Text = "Logout";
+            label9.Click += label9_Click;
             // 
             // adminLogout
             // 

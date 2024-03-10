@@ -1,4 +1,5 @@
-﻿namespace ABC_car_traders.View
+﻿
+namespace ABC_car_traders.View
 {
     partial class Register
     {
@@ -36,15 +37,15 @@
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
+            txtFirstName = new TextBox();
+            txtLastName = new TextBox();
+            txtUserName = new TextBox();
+            txtAddress = new TextBox();
+            txtPassword = new TextBox();
+            txtConfirmPassword = new TextBox();
             panel1 = new Panel();
             label8 = new Label();
-            button1 = new Button();
+            btnRegister = new Button();
             button2 = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -119,49 +120,49 @@
             label7.TabIndex = 7;
             label7.Text = "Confirm Password";
             // 
-            // textBox1
+            // txtFirstName
             // 
-            textBox1.Location = new Point(358, 90);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(322, 27);
-            textBox1.TabIndex = 8;
+            txtFirstName.Location = new Point(358, 90);
+            txtFirstName.Name = "txtFirstName";
+            txtFirstName.Size = new Size(322, 27);
+            txtFirstName.TabIndex = 8;
             // 
-            // textBox2
+            // txtLastName
             // 
-            textBox2.Location = new Point(358, 131);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(322, 27);
-            textBox2.TabIndex = 9;
+            txtLastName.Location = new Point(358, 131);
+            txtLastName.Name = "txtLastName";
+            txtLastName.Size = new Size(322, 27);
+            txtLastName.TabIndex = 9;
             // 
-            // textBox3
+            // txtUserName
             // 
-            textBox3.Location = new Point(358, 171);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(322, 27);
-            textBox3.TabIndex = 10;
+            txtUserName.Location = new Point(358, 171);
+            txtUserName.Name = "txtUserName";
+            txtUserName.Size = new Size(322, 27);
+            txtUserName.TabIndex = 10;
             // 
-            // textBox4
+            // txtAddress
             // 
-            textBox4.Location = new Point(358, 213);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(322, 27);
-            textBox4.TabIndex = 11;
+            txtAddress.Location = new Point(358, 213);
+            txtAddress.Name = "txtAddress";
+            txtAddress.Size = new Size(322, 27);
+            txtAddress.TabIndex = 11;
             // 
-            // textBox5
+            // txtPassword
             // 
-            textBox5.Location = new Point(468, 281);
-            textBox5.Name = "textBox5";
-            textBox5.PasswordChar = '*';
-            textBox5.Size = new Size(210, 27);
-            textBox5.TabIndex = 12;
+            txtPassword.Location = new Point(468, 281);
+            txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '*';
+            txtPassword.Size = new Size(210, 27);
+            txtPassword.TabIndex = 12;
             // 
-            // textBox6
+            // txtConfirmPassword
             // 
-            textBox6.Location = new Point(470, 323);
-            textBox6.Name = "textBox6";
-            textBox6.PasswordChar = '*';
-            textBox6.Size = new Size(210, 27);
-            textBox6.TabIndex = 13;
+            txtConfirmPassword.Location = new Point(470, 323);
+            txtConfirmPassword.Name = "txtConfirmPassword";
+            txtConfirmPassword.PasswordChar = '*';
+            txtConfirmPassword.Size = new Size(210, 27);
+            txtConfirmPassword.TabIndex = 13;
             // 
             // panel1
             // 
@@ -177,26 +178,27 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Sci Fied Outline", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label8.ForeColor = SystemColors.Control;
             label8.Location = new Point(4, 43);
             label8.Name = "label8";
-            label8.Size = new Size(206, 18);
+            label8.Size = new Size(148, 18);
             label8.TabIndex = 6;
             label8.Text = "ABC CAR TRADERS";
             // 
-            // button1
+            // btnRegister
             // 
-            button1.BackColor = Color.FromArgb(0, 0, 192);
-            button1.Cursor = Cursors.Hand;
-            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(586, 377);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 15;
-            button1.Text = "Register";
-            button1.UseVisualStyleBackColor = false;
+            btnRegister.BackColor = Color.FromArgb(0, 0, 192);
+            btnRegister.Cursor = Cursors.Hand;
+            btnRegister.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRegister.ForeColor = Color.White;
+            btnRegister.Location = new Point(586, 377);
+            btnRegister.Name = "btnRegister";
+            btnRegister.Size = new Size(94, 29);
+            btnRegister.TabIndex = 15;
+            btnRegister.Text = "Register";
+            btnRegister.UseVisualStyleBackColor = false;
+            btnRegister.Click += btnRegister_Click;
             // 
             // button2
             // 
@@ -217,14 +219,14 @@
             BackColor = Color.FromArgb(192, 0, 192);
             ClientSize = new Size(800, 450);
             Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnRegister);
             Controls.Add(panel1);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtConfirmPassword);
+            Controls.Add(txtPassword);
+            Controls.Add(txtAddress);
+            Controls.Add(txtUserName);
+            Controls.Add(txtLastName);
+            Controls.Add(txtFirstName);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -248,15 +250,15 @@
         private Label label5;
         private Label label6;
         private Label label7;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
+        private TextBox txtFirstName;
+        private TextBox txtLastName;
+        private TextBox txtUserName;
+        private TextBox txtAddress;
+        private TextBox txtPassword;
+        private TextBox txtConfirmPassword;
         private Panel panel1;
         private Label label8;
-        private Button button1;
+        private Button btnRegister;
         private Button button2;
     }
 }

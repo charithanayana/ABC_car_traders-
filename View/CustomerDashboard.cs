@@ -68,5 +68,10 @@ namespace ABC_car_traders.View
         {
             loadform(new OrderDetails());
         }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

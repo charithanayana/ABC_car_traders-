@@ -22,5 +22,15 @@ namespace ABC_car_traders
             this.Hide();
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
