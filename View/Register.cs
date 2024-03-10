@@ -29,8 +29,8 @@ namespace ABC_car_traders.View
             DBManager dbManager = DBManager.GetInstance();
             try
             {
-                string insertQuery = "INSERT INTO user (user_name, passwd, first_name, last_name, address) values('"
-                    + userName + "', '" + password + "', '" + firstNname + "', '" + lastName + "', '" + address + "')";
+                string insertQuery = "INSERT INTO user (user_name, passwd, user_type, first_name, last_name, address) values('"
+                    + userName + "', '" + password + "', 'CUSTOMER', '" + firstNname + "', '" + lastName + "', '" + address + "')";
                 dbManager.OpenConnection();
                 dbManager.Insert(insertQuery);
             }

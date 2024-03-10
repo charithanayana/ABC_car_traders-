@@ -72,5 +72,10 @@ namespace ABC_car_traders
             mCom.ExecuteNonQuery();
         }
 
+        public MySqlCommand GetMysqlCommand(string query)
+        {
+            return new MySqlCommand(query, connection);
+        }
+
     }
 }

@@ -32,14 +32,14 @@
             panel1 = new Panel();
             label4 = new Label();
             label1 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            txtUserName = new TextBox();
+            txtPassword = new TextBox();
             label2 = new Label();
             label3 = new Label();
-            button1 = new Button();
+            btnLogin = new Button();
             checkBox1 = new CheckBox();
             linkLabel1 = new LinkLabel();
-            linkLabel2 = new LinkLabel();
+            lnkRegister = new LinkLabel();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -76,21 +76,21 @@
             label1.Text = "Sign In";
             label1.Click += label1_Click;
             // 
-            // textBox1
+            // txtUserName
             // 
-            textBox1.Location = new Point(321, 119);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(229, 27);
-            textBox1.TabIndex = 2;
-            textBox1.TextChanged += textBox1_TextChanged;
+            txtUserName.Location = new Point(321, 119);
+            txtUserName.Name = "txtUserName";
+            txtUserName.Size = new Size(229, 27);
+            txtUserName.TabIndex = 2;
+            txtUserName.TextChanged += textBox1_TextChanged;
             // 
-            // textBox2
+            // txtPassword
             // 
-            textBox2.Location = new Point(321, 167);
-            textBox2.Name = "textBox2";
-            textBox2.PasswordChar = '*';
-            textBox2.Size = new Size(229, 27);
-            textBox2.TabIndex = 3;
+            txtPassword.Location = new Point(321, 167);
+            txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '*';
+            txtPassword.Size = new Size(229, 27);
+            txtPassword.TabIndex = 3;
             // 
             // label2
             // 
@@ -112,18 +112,18 @@
             label3.TabIndex = 5;
             label3.Text = "Password";
             // 
-            // button1
+            // btnLogin
             // 
-            button1.BackColor = Color.Blue;
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(236, 290);
-            button1.Name = "button1";
-            button1.Size = new Size(314, 45);
-            button1.TabIndex = 6;
-            button1.Text = "Login";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            btnLogin.BackColor = Color.Blue;
+            btnLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogin.ForeColor = Color.White;
+            btnLogin.Location = new Point(236, 290);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(314, 45);
+            btnLogin.TabIndex = 6;
+            btnLogin.Text = "Login";
+            btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
             // 
             // checkBox1
             // 
@@ -148,17 +148,17 @@
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Forgot Password?";
             // 
-            // linkLabel2
+            // lnkRegister
             // 
-            linkLabel2.AutoSize = true;
-            linkLabel2.LinkColor = Color.Silver;
-            linkLabel2.Location = new Point(280, 338);
-            linkLabel2.Name = "linkLabel2";
-            linkLabel2.Size = new Size(225, 20);
-            linkLabel2.TabIndex = 10;
-            linkLabel2.TabStop = true;
-            linkLabel2.Text = "if you are not register?Click here.";
-            linkLabel2.LinkClicked += linkLabel2_LinkClicked;
+            lnkRegister.AutoSize = true;
+            lnkRegister.LinkColor = Color.Silver;
+            lnkRegister.Location = new Point(280, 338);
+            lnkRegister.Name = "lnkRegister";
+            lnkRegister.Size = new Size(225, 20);
+            lnkRegister.TabIndex = 10;
+            lnkRegister.TabStop = true;
+            lnkRegister.Text = "if you are not register?Click here.";
+            lnkRegister.LinkClicked += lnkRegister_LinkClicked;
             // 
             // Login
             // 
@@ -166,14 +166,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 0, 192);
             ClientSize = new Size(565, 430);
-            Controls.Add(linkLabel2);
+            Controls.Add(lnkRegister);
             Controls.Add(linkLabel1);
             Controls.Add(checkBox1);
-            Controls.Add(button1);
+            Controls.Add(btnLogin);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtPassword);
+            Controls.Add(txtUserName);
             Controls.Add(label1);
             Controls.Add(panel1);
             Cursor = Cursors.Hand;
@@ -191,14 +191,14 @@
 
         private Panel panel1;
         private Label label1;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtUserName;
+        private TextBox txtPassword;
         private Label label2;
         private Label label3;
         private Label label4;
-        private Button button1;
+        private Button btnLogin;
         private CheckBox checkBox1;
         private LinkLabel linkLabel1;
-        private LinkLabel linkLabel2;
+        private LinkLabel lnkRegister;
     }
 }
