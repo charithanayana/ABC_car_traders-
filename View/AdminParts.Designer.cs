@@ -46,23 +46,25 @@
             txtBrand = new TextBox();
             label14 = new Label();
             tabPage2 = new TabPage();
+            btnUpdate = new Button();
             label15 = new Label();
             textBox11 = new TextBox();
             label16 = new Label();
-            dataGridView1 = new DataGridView();
+            sparePartDataGrid = new DataGridView();
             label1 = new Label();
             Id = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
+            brand = new DataGridViewTextBoxColumn();
+            model = new DataGridViewTextBoxColumn();
+            sparePartName = new DataGridViewTextBoxColumn();
             Description = new DataGridViewTextBoxColumn();
-            Column11 = new DataGridViewTextBoxColumn();
-            Column12 = new DataGridViewTextBoxColumn();
+            quantity = new DataGridViewTextBoxColumn();
+            price = new DataGridViewTextBoxColumn();
+            action = new DataGridViewButtonColumn();
             panel7.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)sparePartDataGrid).BeginInit();
             SuspendLayout();
             // 
             // panel7
@@ -218,6 +220,7 @@
             txtBrand.Name = "txtBrand";
             txtBrand.Size = new Size(277, 27);
             txtBrand.TabIndex = 1;
+            txtBrand.TextChanged += txtBrand_TextChanged;
             // 
             // label14
             // 
@@ -232,16 +235,30 @@
             // tabPage2
             // 
             tabPage2.BackColor = Color.FromArgb(192, 0, 192);
+            tabPage2.Controls.Add(btnUpdate);
             tabPage2.Controls.Add(label15);
             tabPage2.Controls.Add(textBox11);
             tabPage2.Controls.Add(label16);
-            tabPage2.Controls.Add(dataGridView1);
+            tabPage2.Controls.Add(sparePartDataGrid);
             tabPage2.Location = new Point(4, 29);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
             tabPage2.Size = new Size(797, 620);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "View Spare Parts Details";
+            // 
+            // btnUpdate
+            // 
+            btnUpdate.BackColor = Color.Transparent;
+            btnUpdate.Cursor = Cursors.Hand;
+            btnUpdate.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnUpdate.Location = new Point(379, 64);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(92, 27);
+            btnUpdate.TabIndex = 25;
+            btnUpdate.Text = "Update";
+            btnUpdate.UseVisualStyleBackColor = false;
+            btnUpdate.Click += button2_Click;
             // 
             // label15
             // 
@@ -269,15 +286,16 @@
             label16.TabIndex = 1;
             label16.Text = "View Spare Parts Details";
             // 
-            // dataGridView1
+            // sparePartDataGrid
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Id, Column2, Column4, Column5, Description, Column11, Column12 });
-            dataGridView1.Location = new Point(1, 115);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(797, 505);
-            dataGridView1.TabIndex = 0;
+            sparePartDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            sparePartDataGrid.Columns.AddRange(new DataGridViewColumn[] { Id, brand, model, sparePartName, Description, quantity, price, action });
+            sparePartDataGrid.Location = new Point(1, 115);
+            sparePartDataGrid.Name = "sparePartDataGrid";
+            sparePartDataGrid.RowHeadersWidth = 51;
+            sparePartDataGrid.Size = new Size(797, 505);
+            sparePartDataGrid.TabIndex = 0;
+            sparePartDataGrid.CellClick += btnDelete;
             // 
             // label1
             // 
@@ -296,26 +314,26 @@
             Id.Name = "Id";
             Id.Width = 125;
             // 
-            // Column2
+            // brand
             // 
-            Column2.HeaderText = "Brand";
-            Column2.MinimumWidth = 6;
-            Column2.Name = "Column2";
-            Column2.Width = 125;
+            brand.HeaderText = "Brand";
+            brand.MinimumWidth = 6;
+            brand.Name = "brand";
+            brand.Width = 125;
             // 
-            // Column4
+            // model
             // 
-            Column4.HeaderText = "Model";
-            Column4.MinimumWidth = 6;
-            Column4.Name = "Column4";
-            Column4.Width = 125;
+            model.HeaderText = "Model";
+            model.MinimumWidth = 6;
+            model.Name = "model";
+            model.Width = 125;
             // 
-            // Column5
+            // sparePartName
             // 
-            Column5.HeaderText = "Spare Part Name";
-            Column5.MinimumWidth = 6;
-            Column5.Name = "Column5";
-            Column5.Width = 125;
+            sparePartName.HeaderText = "Spare Part Name";
+            sparePartName.MinimumWidth = 6;
+            sparePartName.Name = "sparePartName";
+            sparePartName.Width = 125;
             // 
             // Description
             // 
@@ -324,19 +342,28 @@
             Description.Name = "Description";
             Description.Width = 125;
             // 
-            // Column11
+            // quantity
             // 
-            Column11.HeaderText = "Quantity";
-            Column11.MinimumWidth = 6;
-            Column11.Name = "Column11";
-            Column11.Width = 125;
+            quantity.HeaderText = "Quantity";
+            quantity.MinimumWidth = 6;
+            quantity.Name = "quantity";
+            quantity.Width = 125;
             // 
-            // Column12
+            // price
             // 
-            Column12.HeaderText = "Price";
-            Column12.MinimumWidth = 6;
-            Column12.Name = "Column12";
-            Column12.Width = 125;
+            price.HeaderText = "Price";
+            price.MinimumWidth = 6;
+            price.Name = "price";
+            price.Width = 125;
+            // 
+            // action
+            // 
+            action.HeaderText = "Action";
+            action.MinimumWidth = 6;
+            action.Name = "action";
+            action.Text = "Delete";
+            action.UseColumnTextForButtonValue = true;
+            action.Width = 125;
             // 
             // AdminParts
             // 
@@ -355,7 +382,7 @@
             tabPage1.PerformLayout();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)sparePartDataGrid).EndInit();
             ResumeLayout(false);
         }
 
@@ -383,13 +410,15 @@
         private Label label15;
         private TextBox textBox11;
         private Label label16;
-        private DataGridView dataGridView1;
+        private DataGridView sparePartDataGrid;
+        private Button btnUpdate;
         private DataGridViewTextBoxColumn Id;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn brand;
+        private DataGridViewTextBoxColumn model;
+        private DataGridViewTextBoxColumn sparePartName;
         private DataGridViewTextBoxColumn Description;
-        private DataGridViewTextBoxColumn Column11;
-        private DataGridViewTextBoxColumn Column12;
+        private DataGridViewTextBoxColumn quantity;
+        private DataGridViewTextBoxColumn price;
+        private DataGridViewButtonColumn action;
     }
 }

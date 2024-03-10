@@ -28,6 +28,7 @@ namespace ABC_car_traders.View
 
         }
 
+        //Update Customer
         private void update_button(object sender, EventArgs e)
         {
             DBManager dbManager = DBManager.GetInstance();
@@ -58,10 +59,10 @@ namespace ABC_car_traders.View
             finally { }
         }
 
+        // Get all customer Details 1
         private void GetCustomerDetail()
         {
             string userType = "CUSTOMER";
-            //dataGridView1.Rows.Add("Sachintha");
             DBManager dbManager = DBManager.GetInstance();
             try
             {
@@ -75,17 +76,6 @@ namespace ABC_car_traders.View
                 {
                     while (dataReader.Read())
                     {
-                        DataGridViewButtonColumn deleteButton = new DataGridViewButtonColumn();
-                        deleteButton.Name = "Delete";
-
-                        DataGridViewButtonColumn updateButton = new DataGridViewButtonColumn();
-                        updateButton.Name = "Update";
-
-                        /*DataGridViewButtonCell deleteButton = new DataGridViewButtonCell();
-                        deleteButton.Value = "Delete";
-                        DataGridViewButtonCell updateButton = new DataGridViewButtonCell();
-                        updateButton.Value = "Delete";*/
-
                         string id = dataReader["id"].ToString();
                         string username = dataReader["user_name"].ToString();
                         string password = dataReader["passwd"].ToString();
@@ -93,8 +83,6 @@ namespace ABC_car_traders.View
                         string lastName = dataReader["last_name"].ToString();
                         string address = dataReader["address"].ToString();
 
-                        DataGridViewButtonCell column = new DataGridViewButtonCell();
-                        column.FlatStyle = FlatStyle.Flat;
                         dataGridView1.Rows.Add(id, firstName, lastName, "", "", address, username, password);
 
                         dataGridView1.AllowUserToAddRows = false;
@@ -104,7 +92,7 @@ namespace ABC_car_traders.View
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Failed to insert user details: " + ex.Message);
+                MessageBox.Show("Failed to fetch user details!: " + ex.Message);
             }
             finally
             {
@@ -122,8 +110,10 @@ namespace ABC_car_traders.View
 
         }
 
+        // Delete customer record
         private void cell_click_delete_btn(object sender, DataGridViewCellEventArgs e)
         {
+            MessageBox.Show(dataGridView1.Columns[e.ColumnIndex].Name);
             DBManager dbManager = DBManager.GetInstance();
             try
             {
