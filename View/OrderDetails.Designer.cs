@@ -28,209 +28,189 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            btnSearch = new Button();
+            txtSearchKey = new TextBox();
+            dataGridSearch = new DataGridView();
+            Id = new DataGridViewTextBoxColumn();
+            Model = new DataGridViewTextBoxColumn();
+            Description = new DataGridViewTextBoxColumn();
+            UnitPrice = new DataGridViewTextBoxColumn();
+            Type = new DataGridViewTextBoxColumn();
+            Action = new DataGridViewButtonColumn();
+            dataGridOrder = new DataGridView();
+            ItemId = new DataGridViewTextBoxColumn();
+            ItemModel = new DataGridViewTextBoxColumn();
+            ItemDescription = new DataGridViewTextBoxColumn();
+            ItemUnitPrice = new DataGridViewTextBoxColumn();
+            ItemType = new DataGridViewTextBoxColumn();
+            Quantity = new DataGridViewTextBoxColumn();
+            Price = new DataGridViewTextBoxColumn();
             label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            label8 = new Label();
-            label9 = new Label();
-            label10 = new Label();
-            label11 = new Label();
-            textBox4 = new TextBox();
-            label12 = new Label();
+            lblTotalCaption = new Label();
+            lblTotalPrice = new Label();
+            ((System.ComponentModel.ISupportInitialize)dataGridSearch).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridOrder).BeginInit();
             SuspendLayout();
             // 
-            // button1
+            // btnSearch
             // 
-            button1.Location = new Point(626, 111);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 0;
-            button1.Text = "Car Search";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnSearch.Location = new Point(559, 70);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(147, 29);
+            btnSearch.TabIndex = 1;
+            btnSearch.Text = "Search";
+            btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
             // 
-            // button2
+            // txtSearchKey
             // 
-            button2.Location = new Point(626, 186);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 29);
-            button2.TabIndex = 1;
-            button2.Text = "Spare Parts";
-            button2.UseVisualStyleBackColor = true;
+            txtSearchKey.Location = new Point(43, 70);
+            txtSearchKey.Name = "txtSearchKey";
+            txtSearchKey.Size = new Size(510, 27);
+            txtSearchKey.TabIndex = 3;
             // 
-            // button3
+            // dataGridSearch
             // 
-            button3.Location = new Point(571, 426);
-            button3.Name = "button3";
-            button3.Size = new Size(149, 29);
-            button3.TabIndex = 2;
-            button3.Text = "Add To Cart";
-            button3.UseVisualStyleBackColor = true;
+            dataGridSearch.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridSearch.Columns.AddRange(new DataGridViewColumn[] { Id, Model, Description, UnitPrice, Type, Action });
+            dataGridSearch.Location = new Point(43, 117);
+            dataGridSearch.Name = "dataGridSearch";
+            dataGridSearch.RowHeadersWidth = 51;
+            dataGridSearch.Size = new Size(663, 132);
+            dataGridSearch.TabIndex = 4;
+            dataGridSearch.CellClick += clickAddToCart;
             // 
-            // textBox1
+            // Id
             // 
-            textBox1.Location = new Point(43, 112);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(151, 27);
-            textBox1.TabIndex = 3;
+            Id.HeaderText = "Id";
+            Id.MinimumWidth = 6;
+            Id.Name = "Id";
+            Id.Width = 125;
             // 
-            // textBox2
+            // Model
             // 
-            textBox2.Location = new Point(248, 112);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(151, 27);
-            textBox2.TabIndex = 4;
+            Model.HeaderText = "Model";
+            Model.MinimumWidth = 6;
+            Model.Name = "Model";
+            Model.Width = 125;
             // 
-            // textBox3
+            // Description
             // 
-            textBox3.Location = new Point(457, 112);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(125, 27);
-            textBox3.TabIndex = 5;
+            Description.HeaderText = "Description";
+            Description.MinimumWidth = 6;
+            Description.Name = "Description";
+            Description.Width = 125;
+            // 
+            // UnitPrice
+            // 
+            UnitPrice.HeaderText = "UnitPrice";
+            UnitPrice.MinimumWidth = 6;
+            UnitPrice.Name = "UnitPrice";
+            UnitPrice.Width = 125;
+            // 
+            // Type
+            // 
+            Type.HeaderText = "Type";
+            Type.MinimumWidth = 6;
+            Type.Name = "Type";
+            Type.Width = 125;
+            // 
+            // Action
+            // 
+            Action.HeaderText = "Action";
+            Action.MinimumWidth = 6;
+            Action.Name = "Action";
+            Action.Resizable = DataGridViewTriState.True;
+            Action.SortMode = DataGridViewColumnSortMode.Automatic;
+            Action.Text = "Add To Cart";
+            Action.UseColumnTextForButtonValue = true;
+            Action.Width = 125;
+            // 
+            // dataGridOrder
+            // 
+            dataGridOrder.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridOrder.Columns.AddRange(new DataGridViewColumn[] { ItemId, ItemModel, ItemDescription, ItemUnitPrice, ItemType, Quantity, Price });
+            dataGridOrder.Location = new Point(43, 315);
+            dataGridOrder.Name = "dataGridOrder";
+            dataGridOrder.RowHeadersWidth = 51;
+            dataGridOrder.Size = new Size(663, 188);
+            dataGridOrder.TabIndex = 5;
+            // 
+            // ItemId
+            // 
+            ItemId.HeaderText = "ItemId";
+            ItemId.MinimumWidth = 6;
+            ItemId.Name = "ItemId";
+            ItemId.Width = 125;
+            // 
+            // ItemModel
+            // 
+            ItemModel.HeaderText = "ItemModel";
+            ItemModel.MinimumWidth = 6;
+            ItemModel.Name = "ItemModel";
+            ItemModel.Width = 125;
+            // 
+            // ItemDescription
+            // 
+            ItemDescription.HeaderText = "ItemDescription";
+            ItemDescription.MinimumWidth = 6;
+            ItemDescription.Name = "ItemDescription";
+            ItemDescription.Width = 125;
+            // 
+            // ItemUnitPrice
+            // 
+            ItemUnitPrice.HeaderText = "ItemUnitPrice";
+            ItemUnitPrice.MinimumWidth = 6;
+            ItemUnitPrice.Name = "ItemUnitPrice";
+            ItemUnitPrice.Width = 125;
+            // 
+            // ItemType
+            // 
+            ItemType.HeaderText = "ItemType";
+            ItemType.MinimumWidth = 6;
+            ItemType.Name = "ItemType";
+            ItemType.Width = 125;
+            // 
+            // Quantity
+            // 
+            Quantity.HeaderText = "Quantity";
+            Quantity.MinimumWidth = 6;
+            Quantity.Name = "Quantity";
+            Quantity.Width = 125;
+            // 
+            // Price
+            // 
+            Price.HeaderText = "Price";
+            Price.MinimumWidth = 6;
+            Price.Name = "Price";
+            Price.Width = 125;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(43, 89);
+            label1.Location = new Point(43, 38);
             label1.Name = "label1";
-            label1.Size = new Size(74, 20);
+            label1.Size = new Size(90, 20);
             label1.TabIndex = 6;
-            label1.Text = "Car Brand";
-            label1.Click += label1_Click;
+            label1.Text = "Enter Model";
             // 
-            // label2
+            // lblTotalCaption
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(210, 89);
-            label2.Name = "label2";
-            label2.Size = new Size(82, 20);
-            label2.TabIndex = 7;
-            label2.Text = "Car Edition";
+            lblTotalCaption.Font = new Font("Segoe UI", 16F);
+            lblTotalCaption.Location = new Point(428, 520);
+            lblTotalCaption.Name = "lblTotalCaption";
+            lblTotalCaption.Size = new Size(125, 40);
+            lblTotalCaption.TabIndex = 7;
+            lblTotalCaption.Text = "Total";
             // 
-            // label3
+            // lblTotalPrice
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(389, 89);
-            label3.Name = "label3";
-            label3.Size = new Size(78, 20);
-            label3.TabIndex = 8;
-            label3.Text = "Car Model";
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(43, 186);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
-            comboBox1.TabIndex = 9;
-            // 
-            // comboBox2
-            // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(248, 186);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(151, 28);
-            comboBox2.TabIndex = 10;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(43, 163);
-            label4.Name = "label4";
-            label4.Size = new Size(126, 20);
-            label4.TabIndex = 11;
-            label4.Text = "Spare Parts Name";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(248, 163);
-            label5.Name = "label5";
-            label5.Size = new Size(125, 20);
-            label5.TabIndex = 12;
-            label5.Text = "Spare Parts Brand";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(43, 267);
-            label6.Name = "label6";
-            label6.Size = new Size(48, 20);
-            label6.TabIndex = 13;
-            label6.Text = "Brand";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(248, 267);
-            label7.Name = "label7";
-            label7.Size = new Size(118, 20);
-            label7.TabIndex = 14;
-            label7.Text = "Edition or Name";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(43, 312);
-            label8.Name = "label8";
-            label8.Size = new Size(41, 20);
-            label8.TabIndex = 15;
-            label8.Text = "0000";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(251, 312);
-            label9.Name = "label9";
-            label9.Size = new Size(41, 20);
-            label9.TabIndex = 16;
-            label9.Text = "0000";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(43, 372);
-            label10.Name = "label10";
-            label10.Size = new Size(41, 20);
-            label10.TabIndex = 17;
-            label10.Text = "Price";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(43, 402);
-            label11.Name = "label11";
-            label11.Size = new Size(41, 20);
-            label11.TabIndex = 18;
-            label11.Text = "0000";
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(241, 399);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(125, 27);
-            textBox4.TabIndex = 19;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new Point(241, 376);
-            label12.Name = "label12";
-            label12.Size = new Size(35, 20);
-            label12.TabIndex = 20;
-            label12.Text = "QTY";
+            lblTotalPrice.Font = new Font("Segoe UI", 16F);
+            lblTotalPrice.Location = new Point(581, 520);
+            lblTotalPrice.Name = "lblTotalPrice";
+            lblTotalPrice.Size = new Size(125, 40);
+            lblTotalPrice.TabIndex = 8;
+            lblTotalPrice.Text = "0.00";
             // 
             // OrderDetails
             // 
@@ -238,56 +218,42 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 0, 192);
             ClientSize = new Size(749, 612);
-            Controls.Add(label12);
-            Controls.Add(textBox4);
-            Controls.Add(label11);
-            Controls.Add(label10);
-            Controls.Add(label9);
-            Controls.Add(label8);
-            Controls.Add(label7);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(comboBox2);
-            Controls.Add(comboBox1);
-            Controls.Add(label3);
-            Controls.Add(label2);
+            Controls.Add(lblTotalPrice);
+            Controls.Add(lblTotalCaption);
             Controls.Add(label1);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(dataGridOrder);
+            Controls.Add(dataGridSearch);
+            Controls.Add(txtSearchKey);
+            Controls.Add(btnSearch);
             FormBorderStyle = FormBorderStyle.None;
             Name = "OrderDetails";
             Text = "OrderDetails";
+            ((System.ComponentModel.ISupportInitialize)dataGridSearch).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridOrder).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private Button btnSearch;
+        private TextBox txtSearchKey;
+        private DataGridView dataGridSearch;
+        private DataGridView dataGridOrder;
         private Label label1;
-        private Label label2;
-        private Label label3;
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
-        private Label label4;
-        private Label label5;
-        private Label label6;
-        private Label label7;
-        private Label label8;
-        private Label label9;
-        private Label label10;
-        private Label label11;
-        private TextBox textBox4;
-        private Label label12;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn Model;
+        private DataGridViewTextBoxColumn Description;
+        private DataGridViewTextBoxColumn UnitPrice;
+        private DataGridViewTextBoxColumn Type;
+        private DataGridViewButtonColumn Action;
+        private DataGridViewTextBoxColumn ItemId;
+        private DataGridViewTextBoxColumn ItemModel;
+        private DataGridViewTextBoxColumn ItemDescription;
+        private DataGridViewTextBoxColumn ItemUnitPrice;
+        private DataGridViewTextBoxColumn ItemType;
+        private DataGridViewTextBoxColumn Quantity;
+        private DataGridViewTextBoxColumn Price;
+        private Label lblTotalCaption;
+        private Label lblTotalPrice;
     }
 }

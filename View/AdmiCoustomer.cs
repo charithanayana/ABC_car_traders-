@@ -127,7 +127,6 @@ namespace ABC_car_traders.View
                         MySqlCommand cmd = dbManager.GetMysqlCommand(deleteQuery);
                         cmd.Parameters.AddWithValue("@userId", id);
                         cmd.ExecuteNonQuery();
-                        dbManager.CloseConnection();
                         MessageBox.Show("Record deleted ");
                         dataGridView1.Rows.Clear();
                         GetCustomerDetail();
