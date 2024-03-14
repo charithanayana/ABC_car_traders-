@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDashboard));
             label14 = new Label();
             panel1 = new Panel();
-            pictureBox1 = new PictureBox();
-            label1 = new Label();
-            label2 = new Label();
             label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            pictureBox1 = new PictureBox();
             panel3 = new Panel();
             label4 = new Label();
             label5 = new Label();
@@ -81,25 +81,15 @@
             panel1.Size = new Size(315, 207);
             panel1.TabIndex = 25;
             // 
-            // pictureBox1
+            // label3
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(175, 57);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(121, 102);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(19, 14);
-            label1.Name = "label1";
-            label1.Size = new Size(104, 38);
-            label1.TabIndex = 27;
-            label1.Text = "Orders";
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(17, 163);
+            label3.Name = "label3";
+            label3.Size = new Size(152, 25);
+            label3.TabIndex = 29;
+            label3.Text = "23 in This Month";
             // 
             // label2
             // 
@@ -111,15 +101,25 @@
             label2.TabIndex = 28;
             label2.Text = "527";
             // 
-            // label3
+            // label1
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(17, 163);
-            label3.Name = "label3";
-            label3.Size = new Size(152, 25);
-            label3.TabIndex = 29;
-            label3.Text = "23 in This Month";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(19, 14);
+            label1.Name = "label1";
+            label1.Size = new Size(104, 38);
+            label1.TabIndex = 27;
+            label1.Text = "Orders";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(175, 57);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(121, 102);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // panel3
             // 
@@ -208,7 +208,7 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(175, 57);
+            pictureBox3.Location = new Point(175, 80);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(121, 102);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -249,7 +249,7 @@
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(175, 57);
+            pictureBox4.Location = new Point(175, 80);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(121, 102);
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ABC_car_traders.View
 {
-    public partial class AdminUser : Form
+    public partial class AdminReports : Form
     {
-        public AdminUser()
+        public AdminReports()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace ABC_car_traders.View
 {
-    partial class AdminUser
+    partial class AdminReports
     {
         /// <summary>
         /// Required designer variable.

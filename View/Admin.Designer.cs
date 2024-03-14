@@ -96,6 +96,7 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.FromArgb(192, 0, 192);
+            label1.Cursor = Cursors.Hand;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(34, 121);
             label1.Name = "label1";
@@ -164,6 +165,7 @@
             // 
             label7.AutoSize = true;
             label7.BackColor = Color.FromArgb(192, 0, 192);
+            label7.Cursor = Cursors.Hand;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.Location = new Point(29, 469);
             label7.Name = "label7";
@@ -181,11 +183,13 @@
             pictureBox6.Size = new Size(164, 45);
             pictureBox6.TabIndex = 27;
             pictureBox6.TabStop = false;
+            pictureBox6.Click += pictureBox6_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.FromArgb(192, 0, 192);
+            label2.Cursor = Cursors.Hand;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(6, 192);
             label2.Name = "label2";
@@ -198,6 +202,7 @@
             // 
             label5.AutoSize = true;
             label5.BackColor = Color.FromArgb(192, 0, 192);
+            label5.Cursor = Cursors.Hand;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.Location = new Point(8, 402);
             label5.Name = "label5";
@@ -215,6 +220,7 @@
             pictureBox5.Size = new Size(164, 45);
             pictureBox5.TabIndex = 25;
             pictureBox5.TabStop = false;
+            pictureBox5.Click += pictureBox5_Click;
             // 
             // pictureBox2
             // 
@@ -225,23 +231,26 @@
             pictureBox2.Size = new Size(164, 45);
             pictureBox2.TabIndex = 19;
             pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.FromArgb(192, 0, 192);
+            label3.Cursor = Cursors.Hand;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(27, 263);
+            label3.Location = new Point(49, 263);
             label3.Name = "label3";
-            label3.Size = new Size(101, 20);
+            label3.Size = new Size(64, 20);
             label3.TabIndex = 22;
-            label3.Text = "Manage User";
+            label3.Text = "Reports";
             label3.Click += label3_Click;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.FromArgb(192, 0, 192);
+            label4.Cursor = Cursors.Hand;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.Location = new Point(29, 333);
             label4.Name = "label4";
@@ -259,6 +268,7 @@
             pictureBox4.Size = new Size(164, 45);
             pictureBox4.TabIndex = 23;
             pictureBox4.TabStop = false;
+            pictureBox4.Click += pictureBox4_Click;
             // 
             // pictureBox3
             // 
@@ -269,10 +279,12 @@
             pictureBox3.Size = new Size(164, 45);
             pictureBox3.TabIndex = 21;
             pictureBox3.TabStop = false;
+            pictureBox3.Click += pictureBox3_Click;
             // 
             // mainpanel
             // 
             mainpanel.BackColor = Color.White;
+            mainpanel.BorderStyle = BorderStyle.Fixed3D;
             mainpanel.Location = new Point(379, 0);
             mainpanel.Name = "mainpanel";
             mainpanel.Size = new Size(807, 653);

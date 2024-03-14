@@ -17,6 +17,7 @@ namespace ABC_car_traders.View
             InitializeComponent();
 
             LoadDefaultForm();
+
         }
 
         public void loadform(object Form)
@@ -34,10 +35,6 @@ namespace ABC_car_traders.View
         {
             loadform(new AdminDashboard());
         }
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -46,8 +43,8 @@ namespace ABC_car_traders.View
 
         private void label6_Click(object sender, EventArgs e)
         {
-            
-           
+
+
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
@@ -62,7 +59,7 @@ namespace ABC_car_traders.View
 
         private void label3_Click(object sender, EventArgs e)
         {
-            loadform(new AdminUser());
+            loadform(new AdminReports());
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -82,7 +79,32 @@ namespace ABC_car_traders.View
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            loadform(new AdminDashboard());
+        }
 
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            loadform(new AdmiCoustomer());
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            loadform(new AdminReports());
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            loadform(new AdminCars());
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            loadform(new AdminParts());
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            loadform(new AdminOrders());
         }
     }
 }
