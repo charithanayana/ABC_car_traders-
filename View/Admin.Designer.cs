@@ -272,6 +272,7 @@
             // 
             // mainpanel
             // 
+            mainpanel.BackColor = Color.White;
             mainpanel.Location = new Point(379, 0);
             mainpanel.Name = "mainpanel";
             mainpanel.Size = new Size(807, 653);

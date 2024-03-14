@@ -15,6 +15,8 @@ namespace ABC_car_traders.View
         public Admin()
         {
             InitializeComponent();
+
+            LoadDefaultForm();
         }
 
         public void loadform(object Form)
@@ -28,6 +30,10 @@ namespace ABC_car_traders.View
             this.mainpanel.Tag = f;
             f.Show();
         }
+        public void LoadDefaultForm()
+        {
+            loadform(new AdminDashboard());
+        }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -35,12 +41,13 @@ namespace ABC_car_traders.View
 
         private void label1_Click(object sender, EventArgs e)
         {
-
+            loadform(new AdminDashboard());
         }
 
         private void label6_Click(object sender, EventArgs e)
         {
-
+            
+           
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
