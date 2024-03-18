@@ -145,14 +145,70 @@ namespace ABC_car_traders.View
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-           /* foreach (DataGridViewRow row in dataGridOrder.Rows)
+            if (dataGridOrder.Rows.Count == 0)
             {
-                if (row.Cells["Price"] != null && row.Cells["Price"].Value != null)
-                {
-                    string priceString = row.Cells["Price"].Value.ToString();
-                    total += Double.Parse(priceString);
-                }
-            }*/
+                MessageBox.Show("Please add order item");
+                return;  
+            }
+            string todayStr = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            insertCustomerOrder(1, lblTotalPrice.Text, todayStr);
+            
+            foreach (DataGridViewRow row in dataGridOrder.Rows)
+            {
+                string itemId = row.Cells["ItemId"].Value.ToString();
+                string itemModel = row.Cells["ItemModel"].Value.ToString();
+                string itemDescription = row.Cells["ItemDescription"].Value.ToString();
+                string itemUnitPrice = row.Cells["ItemUnitPrice"].Value.ToString();
+                string quantity = row.Cells["Quantity"].Value.ToString();
+                insertOrderItem(1, itemModel + " | " + itemDescription, quantity, itemUnitPrice);
+            }
+        }
+
+        private void insertCustomerOrder(int customerId, string total, string todayStr)
+        {
+            DBManager dbManager = DBManager.GetInstance();
+            try
+            {
+                string insertQuery = "INSERT INTO customerorder (customer_id, total_price, created_at) values(" +
+                    "'" + customerId + "', " +
+                    "'" + total + "', " +
+                    "'" + todayStr + "'" +
+                    ")";
+                dbManager.OpenConnection();
+                dbManager.Insert(insertQuery);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to insert order details: " + ex.Message);
+            }
+            finally
+            {
+                dbManager.CloseConnection();
+            }
+        }
+
+        private void insertOrderItem(int orderId, string name, string quantity, string itemPrice)
+        {
+            DBManager dbManager = DBManager.GetInstance();
+            try
+            {
+                string insertQuery = "INSERT INTO orderitem (order_id, name, quantity, item_price) values(" +
+                    "'" + orderId + "', " +
+                    "'" + name + "', " +
+                    "'" + quantity + "', " +
+                    "'" + itemPrice + "'" +
+                    ")";
+                dbManager.OpenConnection();
+                dbManager.Insert(insertQuery);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to insert order item: " + ex.Message);
+            }
+            finally
+            {
+                dbManager.CloseConnection();
+            }
         }
     }
 }
