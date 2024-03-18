@@ -56,6 +56,7 @@
             txtBrand = new TextBox();
             label1 = new Label();
             tabPage2 = new TabPage();
+            button1 = new Button();
             label15 = new Label();
             textBox11 = new TextBox();
             label14 = new Label();
@@ -71,7 +72,7 @@
             Column10 = new DataGridViewTextBoxColumn();
             Column12 = new DataGridViewTextBoxColumn();
             Column13 = new DataGridViewTextBoxColumn();
-            button1 = new Button();
+            delete = new DataGridViewTextBoxColumn();
             panel7.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -353,6 +354,15 @@
             tabPage2.Text = "View Car Details";
             tabPage2.Click += tabPage2_Click;
             // 
+            // button1
+            // 
+            button1.Location = new Point(410, 63);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 4;
+            button1.Text = "Update";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // label15
             // 
             label15.AutoSize = true;
@@ -382,13 +392,12 @@
             // gridCarDetails
             // 
             gridCarDetails.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gridCarDetails.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column4, Column5, Column6, Column7, Column8, Column9, Column10, Column12, Column13 });
+            gridCarDetails.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column4, Column5, Column6, Column7, Column8, Column9, Column10, Column12, Column13, delete });
             gridCarDetails.Location = new Point(1, 115);
             gridCarDetails.Name = "gridCarDetails";
             gridCarDetails.RowHeadersWidth = 51;
             gridCarDetails.Size = new Size(797, 505);
             gridCarDetails.TabIndex = 0;
-            gridCarDetails.CellContentClick += dataGridView1_CellContentClick;
             // 
             // Column1
             // 
@@ -467,14 +476,12 @@
             Column13.Name = "Column13";
             Column13.Width = 125;
             // 
-            // button1
+            // delete
             // 
-            button1.Location = new Point(223, 62);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 4;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            delete.HeaderText = "Action";
+            delete.MinimumWidth = 6;
+            delete.Name = "delete";
+            delete.Width = 125;
             // 
             // AdminCars
             // 
@@ -534,6 +541,7 @@
         private Label label14;
         private Label label15;
         private TextBox textBox11;
+        private Button button1;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column4;
@@ -545,6 +553,6 @@
         private DataGridViewTextBoxColumn Column10;
         private DataGridViewTextBoxColumn Column12;
         private DataGridViewTextBoxColumn Column13;
-        private Button button1;
+        private DataGridViewTextBoxColumn delete;
     }
 }

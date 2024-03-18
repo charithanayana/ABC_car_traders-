@@ -143,5 +143,16 @@ namespace ABC_car_traders.View
             return total;
         }
 
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridOrder.Rows)
+            {
+                if (row.Cells["Price"] != null && row.Cells["Price"].Value != null)
+                {
+                    string priceString = row.Cells["Price"].Value.ToString();
+                    total += Double.Parse(priceString);
+                }
+            }
+        }
     }
 }

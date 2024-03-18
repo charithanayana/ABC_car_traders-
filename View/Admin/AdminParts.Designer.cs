@@ -51,7 +51,6 @@
             textBox11 = new TextBox();
             label16 = new Label();
             sparePartDataGrid = new DataGridView();
-            label1 = new Label();
             Id = new DataGridViewTextBoxColumn();
             brand = new DataGridViewTextBoxColumn();
             model = new DataGridViewTextBoxColumn();
@@ -60,6 +59,7 @@
             quantity = new DataGridViewTextBoxColumn();
             price = new DataGridViewTextBoxColumn();
             action = new DataGridViewButtonColumn();
+            label1 = new Label();
             panel7.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -252,7 +252,7 @@
             btnUpdate.BackColor = Color.Transparent;
             btnUpdate.Cursor = Cursors.Hand;
             btnUpdate.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnUpdate.Location = new Point(379, 64);
+            btnUpdate.Location = new Point(420, 64);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(92, 27);
             btnUpdate.TabIndex = 25;
@@ -296,16 +296,6 @@
             sparePartDataGrid.Size = new Size(797, 505);
             sparePartDataGrid.TabIndex = 0;
             sparePartDataGrid.CellClick += btnDelete;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(340, 282);
-            label1.Name = "label1";
-            label1.Size = new Size(198, 41);
-            label1.TabIndex = 21;
-            label1.Text = "Manage Parts";
             // 
             // Id
             // 
@@ -364,6 +354,16 @@
             action.Text = "Delete";
             action.UseColumnTextForButtonValue = true;
             action.Width = 125;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(340, 282);
+            label1.Name = "label1";
+            label1.Size = new Size(198, 41);
+            label1.TabIndex = 21;
+            label1.Text = "Manage Parts";
             // 
             // AdminParts
             // 

@@ -74,10 +74,7 @@ namespace ABC_car_traders.View
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+    
 
         private void loadCarDetails()
         {

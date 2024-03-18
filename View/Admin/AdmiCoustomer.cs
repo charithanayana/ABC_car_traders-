@@ -31,6 +31,11 @@ namespace ABC_car_traders.View
         //Update Customer
         private void update_button(object sender, EventArgs e)
         {
+            
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
             DBManager dbManager = DBManager.GetInstance();
             try
             {
@@ -137,10 +142,12 @@ namespace ABC_car_traders.View
             {
 
             }
-            finally 
-            { 
-                dbManager.CloseConnection(); 
+            finally
+            {
+                dbManager.CloseConnection();
             }
         }
+
+       
     }
 }

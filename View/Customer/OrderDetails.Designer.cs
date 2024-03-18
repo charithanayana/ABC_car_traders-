@@ -48,6 +48,7 @@
             label1 = new Label();
             lblTotalCaption = new Label();
             lblTotalPrice = new Label();
+            btnSave = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridSearch).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridOrder).BeginInit();
             SuspendLayout();
@@ -212,12 +213,23 @@
             lblTotalPrice.TabIndex = 8;
             lblTotalPrice.Text = "0.00";
             // 
+            // btnSave
+            // 
+            btnSave.Location = new Point(43, 520);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(94, 29);
+            btnSave.TabIndex = 9;
+            btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
+            // 
             // OrderDetails
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 0, 192);
             ClientSize = new Size(749, 612);
+            Controls.Add(btnSave);
             Controls.Add(lblTotalPrice);
             Controls.Add(lblTotalCaption);
             Controls.Add(label1);
@@ -255,5 +267,6 @@
         private DataGridViewTextBoxColumn Price;
         private Label lblTotalCaption;
         private Label lblTotalPrice;
+        private Button btnSave;
     }
 }
