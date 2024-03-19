@@ -31,6 +31,7 @@ namespace ABC_car_traders
             string password = txtPassword.Text;
             string tmpPassword = null;
             string tmpUserType = null;
+            int userId = -1;
 
             DBManager dbManager = DBManager.GetInstance();
             try
@@ -46,6 +47,7 @@ namespace ABC_car_traders
                     {
                         tmpPassword = dataReader["passwd"].ToString();
                         tmpUserType = dataReader["user_type"].ToString();
+                        userId = int.Parse(dataReader["id"].ToString());
                     }
                     if (!password.Equals(tmpPassword))
                     {
@@ -53,7 +55,10 @@ namespace ABC_car_traders
                     }
                     else
                     {
+                        dbManager.CloseConnection();
                         this.Hide();
+                        /*methanata*/
+                        UserClass.UserId = userId;
                         if ("CUSTOMER".Equals(tmpUserType))
                         {
                             new CustomerDashboard().ShowDialog(this);

@@ -63,7 +63,7 @@ namespace ABC_car_traders.View
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            loadform(new OrderDetails());
+            
         }
 
         private void OrderDetails_Paint(object sender, PaintEventArgs e)

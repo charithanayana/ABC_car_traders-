@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
+
 
 namespace ABC_car_traders
 {
@@ -23,10 +25,11 @@ namespace ABC_car_traders
             server = "localhost";
             database = "abc_car_traders";
             username = "root";
-            password = "root";
+            password = "1234";
             connectionString = "SERVER=" + server + ";DATABASE=" + database + ";UID=" + username 
                 + ";PASSWORD="+ password + ";";
-            connection = new MySqlConnection(connectionString);
+           
+                connection = new MySqlConnection(connectionString);
         }
 
         public static DBManager GetInstance()
@@ -76,6 +79,21 @@ namespace ABC_car_traders
         {
             return new MySqlCommand(query, connection);
         }
+
+        public int InsertWithIdentity(string query)
+        {
+            int insertedId = -1;
+                    MySqlCommand command = new MySqlCommand(query, connection);
+                    command.ExecuteNonQuery();
+                    command.CommandText = "SELECT LAST_INSERT_ID();";
+                    object result = command.ExecuteScalar();
+                    if (result != null && result != DBNull.Value)
+                    {
+                        insertedId = Convert.ToInt32(result);
+                    }
+            return insertedId;
+        }
+
 
     }
 }

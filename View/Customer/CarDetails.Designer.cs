@@ -74,10 +74,10 @@
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Brand, model, manu_year, regi_year, body_type, capacity, color, price, transmission, fuel_type });
-            dataGridView1.Location = new Point(43, 125);
+            dataGridView1.Location = new Point(12, 125);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(651, 390);
+            dataGridView1.Size = new Size(707, 428);
             dataGridView1.TabIndex = 9;
             // 
             // Brand
@@ -163,6 +163,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "CarDetails";
             Text = "CarDetails";
+            Load += CarDetails_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

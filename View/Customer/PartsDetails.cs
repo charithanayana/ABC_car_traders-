@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace ABC_car_traders.View.Customer
 {
-    public partial class CarDetails : Form
+    public partial class PartsDetails : Form
     {
-        public CarDetails()
+        public PartsDetails()
         {
             InitializeComponent();
-        }
-
-        private void CarDetails_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

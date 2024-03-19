@@ -151,31 +151,39 @@ namespace ABC_car_traders.View
                 return;  
             }
             string todayStr = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            insertCustomerOrder(1, lblTotalPrice.Text, todayStr);
-            
-            foreach (DataGridViewRow row in dataGridOrder.Rows)
+            int ordId = insertCustomerOrder(UserClass.UserId, lblTotalPrice.Text, todayStr);
+
+            for (int item = 0; item < dataGridOrder.Rows.Count - 1; item++)
             {
-                string itemId = row.Cells["ItemId"].Value.ToString();
-                string itemModel = row.Cells["ItemModel"].Value.ToString();
-                string itemDescription = row.Cells["ItemDescription"].Value.ToString();
-                string itemUnitPrice = row.Cells["ItemUnitPrice"].Value.ToString();
-                string quantity = row.Cells["Quantity"].Value.ToString();
-                insertOrderItem(1, itemModel + " | " + itemDescription, quantity, itemUnitPrice);
+                string itemId = dataGridOrder.Rows[item].Cells[0].Value?.ToString();
+                string itemModel = dataGridOrder.Rows[item].Cells[1].Value?.ToString();
+                string itemDescription = dataGridOrder.Rows[item].Cells[2].Value?.ToString();
+                string itemUnitPrice = dataGridOrder.Rows[item].Cells[3].Value?.ToString();
+                string quantity = dataGridOrder.Rows[item].Cells[5].Value?.ToString();
+                /*  string itemId = row.Cells["ItemId"].Value.ToString();
+                  string itemModel = row.Cells["ItemModel"].Value.ToString();
+                  string itemDescription = row.Cells["ItemDescription"].Value.ToString();
+                  string itemUnitPrice = row.Cells["ItemUnitPrice"].Value.ToString();
+                  string quantity = row.Cells["Quantity"].Value.ToString();*/
+                  insertOrderItem(ordId, itemModel + " | " + itemDescription, int.Parse(quantity), itemUnitPrice);
             }
         }
 
-        private void insertCustomerOrder(int customerId, string total, string todayStr)
+        /*customerOrder eka save karana thena*/
+        private int insertCustomerOrder(int customerId, string total, string todayStr)
         {
             DBManager dbManager = DBManager.GetInstance();
+            int insertedId = -1; // Initialize with a default value
             try
             {
                 string insertQuery = "INSERT INTO customerorder (customer_id, total_price, created_at) values(" +
                     "'" + customerId + "', " +
                     "'" + total + "', " +
                     "'" + todayStr + "'" +
-                    ")";
+                    ");"; // Retrieve the last inserted ID
+
                 dbManager.OpenConnection();
-                dbManager.Insert(insertQuery);
+                insertedId = dbManager.InsertWithIdentity(insertQuery);
             }
             catch (Exception ex)
             {
@@ -185,9 +193,11 @@ namespace ABC_car_traders.View
             {
                 dbManager.CloseConnection();
             }
+            return insertedId; // Return the inserted ID
         }
 
-        private void insertOrderItem(int orderId, string name, string quantity, string itemPrice)
+        /*meka awilla orderitem eka save karana thena*/
+        private void insertOrderItem(int orderId, string name, int quantity, string itemPrice)
         {
             DBManager dbManager = DBManager.GetInstance();
             try
