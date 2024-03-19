@@ -72,6 +72,7 @@ namespace ABC_car_traders.View
             try
             {
                 string query = "SELECT * FROM user WHERE user_type = @userType";
+                dbManager.CloseConnection();
                 dbManager.OpenConnection();
                 MySqlCommand cmd = dbManager.GetMysqlCommand(query);
                 cmd.Parameters.AddWithValue("@userType", userType);
@@ -93,7 +94,7 @@ namespace ABC_car_traders.View
                         dataGridView1.AllowUserToAddRows = false;
                     }
                 }
-                dbManager.CloseConnection();
+                //dbManager.CloseConnection();
             }
             catch (Exception ex)
             {
@@ -118,7 +119,7 @@ namespace ABC_car_traders.View
         // Delete customer record
         private void cell_click_delete_btn(object sender, DataGridViewCellEventArgs e)
         {
-            MessageBox.Show(dataGridView1.Columns[e.ColumnIndex].Name);
+            //MessageBox.Show(dataGridView1.Columns[e.ColumnIndex].Name);
             DBManager dbManager = DBManager.GetInstance();
             try
             {
@@ -126,8 +127,8 @@ namespace ABC_car_traders.View
                 {
                     if (MessageBox.Show("Are you sure to delete?", "Delete Record!", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
-                        string deleteQuery = "DELETE FROM user WHERE id = @userId";
                         dbManager.OpenConnection();
+                        string deleteQuery = "DELETE FROM user WHERE id = @userId";
                         int id = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["ID"].FormattedValue.ToString());
                         MySqlCommand cmd = dbManager.GetMysqlCommand(deleteQuery);
                         cmd.Parameters.AddWithValue("@userId", id);
