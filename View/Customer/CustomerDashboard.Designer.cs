@@ -186,11 +186,11 @@
             label5.BackColor = Color.FromArgb(192, 0, 192);
             label5.Cursor = Cursors.Hand;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(63, 402);
+            label5.Location = new Point(51, 402);
             label5.Name = "label5";
-            label5.Size = new Size(55, 20);
+            label5.Size = new Size(91, 20);
             label5.TabIndex = 26;
-            label5.Text = "Profile";
+            label5.Text = "View Order ";
             label5.Click += label5_Click;
             // 
             // pictureBox5
@@ -202,6 +202,7 @@
             pictureBox5.Size = new Size(164, 45);
             pictureBox5.TabIndex = 25;
             pictureBox5.TabStop = false;
+            pictureBox5.Click += pictureBox5_Click;
             // 
             // pictureBox2
             // 

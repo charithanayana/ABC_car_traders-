@@ -252,9 +252,9 @@
             btnUpdate.BackColor = Color.Transparent;
             btnUpdate.Cursor = Cursors.Hand;
             btnUpdate.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnUpdate.Location = new Point(420, 64);
+            btnUpdate.Location = new Point(671, 565);
             btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(92, 27);
+            btnUpdate.Size = new Size(94, 31);
             btnUpdate.TabIndex = 25;
             btnUpdate.Text = "Update";
             btnUpdate.UseVisualStyleBackColor = false;
@@ -280,11 +280,11 @@
             // 
             label16.AutoSize = true;
             label16.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label16.Location = new Point(18, 23);
+            label16.Location = new Point(18, 27);
             label16.Name = "label16";
-            label16.Size = new Size(205, 23);
+            label16.Size = new Size(225, 23);
             label16.TabIndex = 1;
-            label16.Text = "View Spare Parts Details";
+            label16.Text = "Update Spare Parts Details";
             // 
             // sparePartDataGrid
             // 
@@ -293,7 +293,7 @@
             sparePartDataGrid.Location = new Point(1, 115);
             sparePartDataGrid.Name = "sparePartDataGrid";
             sparePartDataGrid.RowHeadersWidth = 51;
-            sparePartDataGrid.Size = new Size(797, 505);
+            sparePartDataGrid.Size = new Size(797, 434);
             sparePartDataGrid.TabIndex = 0;
             sparePartDataGrid.CellClick += btnDelete;
             // 

@@ -43,7 +43,7 @@ namespace ABC_car_traders.View
 
         private void label5_Click(object sender, EventArgs e)
         {
-
+            loadform(new ViewOrders());
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -104,6 +104,11 @@ namespace ABC_car_traders.View
         private void label2_Click(object sender, EventArgs e)
         {
             loadform(new CarDetails());
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            loadform(new ViewOrders());
         }
     }
 }

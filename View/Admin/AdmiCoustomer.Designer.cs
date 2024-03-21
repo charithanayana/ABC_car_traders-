@@ -89,7 +89,7 @@
             btnUpdate.BackColor = Color.Transparent;
             btnUpdate.Cursor = Cursors.Hand;
             btnUpdate.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnUpdate.Location = new Point(409, 67);
+            btnUpdate.Location = new Point(672, 562);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(92, 27);
             btnUpdate.TabIndex = 26;
@@ -128,10 +128,10 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { id, firstName, LName, mobile, email, address, username, password, Action });
             dataGridView1.GridColor = SystemColors.WindowText;
-            dataGridView1.Location = new Point(1, 115);
+            dataGridView1.Location = new Point(7, 115);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(797, 505);
+            dataGridView1.Size = new Size(782, 431);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellClick += cell_click_delete_btn;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;

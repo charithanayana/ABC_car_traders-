@@ -149,7 +149,8 @@ namespace ABC_car_traders.View
                     {
                         string deleteQuery = "DELETE FROM sparepart WHERE id = @sparepartId";
                         dbManager.OpenConnection();
-                        int id = Convert.ToInt32(sparePartDataGrid.Rows[e.RowIndex].Cells["Id"].FormattedValue.ToString());
+                        int id = Convert.ToInt32(sparePartDataGrid.Rows[e.RowIndex].Cells["id"].FormattedValue.ToString());
+                        MessageBox.Show(id.ToString());
                         MySqlCommand cmd = dbManager.GetMysqlCommand(deleteQuery);
                         cmd.Parameters.AddWithValue("@sparepartId", id);
                         cmd.ExecuteNonQuery();

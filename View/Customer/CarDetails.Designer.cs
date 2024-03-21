@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtSearchKey = new TextBox();
+            txtCarSearchKey = new TextBox();
             label1 = new Label();
             btnSearch = new Button();
             customerCarGridView1 = new DataGridView();
@@ -45,12 +45,12 @@
             ((System.ComponentModel.ISupportInitialize)customerCarGridView1).BeginInit();
             SuspendLayout();
             // 
-            // txtSearchKey
+            // txtCarSearchKey
             // 
-            txtSearchKey.Location = new Point(43, 70);
-            txtSearchKey.Name = "txtSearchKey";
-            txtSearchKey.Size = new Size(510, 27);
-            txtSearchKey.TabIndex = 4;
+            txtCarSearchKey.Location = new Point(43, 70);
+            txtCarSearchKey.Name = "txtCarSearchKey";
+            txtCarSearchKey.Size = new Size(510, 27);
+            txtCarSearchKey.TabIndex = 4;
             // 
             // label1
             // 
@@ -160,11 +160,10 @@
             Controls.Add(customerCarGridView1);
             Controls.Add(btnSearch);
             Controls.Add(label1);
-            Controls.Add(txtSearchKey);
+            Controls.Add(txtCarSearchKey);
             FormBorderStyle = FormBorderStyle.None;
             Name = "CarDetails";
             Text = "CarDetails";
-            //Load += CarDetails_Load;
             ((System.ComponentModel.ISupportInitialize)customerCarGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -172,7 +171,7 @@
 
         #endregion
 
-        private TextBox txtSearchKey;
+        private TextBox txtCarSearchKey;
         private Label label1;
         private Button btnSearch;
         private DataGridView customerCarGridView1;

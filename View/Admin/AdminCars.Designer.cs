@@ -61,7 +61,7 @@
             textBox11 = new TextBox();
             label14 = new Label();
             gridCarDetails = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
+            CarID = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
@@ -72,7 +72,7 @@
             Column10 = new DataGridViewTextBoxColumn();
             Column12 = new DataGridViewTextBoxColumn();
             Column13 = new DataGridViewTextBoxColumn();
-            delete = new DataGridViewTextBoxColumn();
+            delete = new DataGridViewButtonColumn();
             panel7.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -356,12 +356,15 @@
             // 
             // button1
             // 
-            button1.Location = new Point(410, 63);
+            button1.Cursor = Cursors.Hand;
+            button1.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.Location = new Point(668, 566);
             button1.Name = "button1";
             button1.Size = new Size(94, 29);
             button1.TabIndex = 4;
             button1.Text = "Update";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // label15
             // 
@@ -385,26 +388,27 @@
             label14.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label14.Location = new Point(25, 27);
             label14.Name = "label14";
-            label14.Size = new Size(141, 23);
+            label14.Size = new Size(161, 23);
             label14.TabIndex = 1;
-            label14.Text = "View Car Details";
+            label14.Text = "Update Car Details";
             // 
             // gridCarDetails
             // 
             gridCarDetails.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gridCarDetails.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column4, Column5, Column6, Column7, Column8, Column9, Column10, Column12, Column13, delete });
+            gridCarDetails.Columns.AddRange(new DataGridViewColumn[] { CarID, Column2, Column4, Column5, Column6, Column7, Column8, Column9, Column10, Column12, Column13, delete });
             gridCarDetails.Location = new Point(1, 115);
             gridCarDetails.Name = "gridCarDetails";
             gridCarDetails.RowHeadersWidth = 51;
-            gridCarDetails.Size = new Size(797, 505);
+            gridCarDetails.Size = new Size(797, 434);
             gridCarDetails.TabIndex = 0;
+            gridCarDetails.CellClick += btnDelete;
             // 
-            // Column1
+            // CarID
             // 
-            Column1.HeaderText = "CarID";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
-            Column1.Width = 125;
+            CarID.HeaderText = "CarID";
+            CarID.MinimumWidth = 6;
+            CarID.Name = "CarID";
+            CarID.Width = 125;
             // 
             // Column2
             // 
@@ -481,6 +485,10 @@
             delete.HeaderText = "Action";
             delete.MinimumWidth = 6;
             delete.Name = "delete";
+            delete.Resizable = DataGridViewTriState.True;
+            delete.SortMode = DataGridViewColumnSortMode.Automatic;
+            delete.Text = "Delete";
+            delete.UseColumnTextForButtonValue = true;
             delete.Width = 125;
             // 
             // AdminCars
@@ -542,7 +550,7 @@
         private Label label15;
         private TextBox textBox11;
         private Button button1;
-        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn CarID;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
@@ -553,6 +561,6 @@
         private DataGridViewTextBoxColumn Column10;
         private DataGridViewTextBoxColumn Column12;
         private DataGridViewTextBoxColumn Column13;
-        private DataGridViewTextBoxColumn delete;
+        private DataGridViewButtonColumn delete;
     }
 }

@@ -65,7 +65,54 @@ namespace ABC_car_traders.View.Customer
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            string searchkey = txtCarSearchKey.Text;
+            if (searchkey ==null || searchkey == "" )
+            {
+                MessageBox.Show("Please enter model to search");
+                return;
+            }
+            customerCarGridView1.Rows.Clear();
+            loadCarDetails(searchkey);
+        }
 
+        private void loadCarDetails(string searchkey)
+        {
+            DBManager dbManager = DBManager.GetInstance();
+            MySqlDataReader dataReader = null;
+            try
+            {
+                string query = "SELECT * FROM car WHERE model like '%" + searchkey + "%'";
+                dbManager.OpenConnection();
+                MySqlCommand cmd = dbManager.GetMysqlCommand(query);
+                dataReader = cmd.ExecuteReader();
+
+                if (!dataReader.HasRows)
+                {
+                    return;
+                }
+
+                while (dataReader.Read())
+                {
+                    string id = dataReader["id"].ToString();
+                    string model = dataReader["model"].ToString();
+                    string description = dataReader["description"].ToString();
+                    string unitPrice = dataReader["price"].ToString();
+                    customerCarGridView1.Rows.Add(id, model, description, unitPrice, "CAR");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to get car details: " + ex.Message);
+            }
+            finally
+            {
+                if (dataReader != null)
+                {
+                    dataReader.Close();
+                }
+                dbManager.CloseConnection();
+            }
         }
     }
 }
