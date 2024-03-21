@@ -100,7 +100,7 @@ namespace ABC_car_traders.View
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Failed to get car details: " + ex.Message);
+                MessageBox.Show("Failed to get parts details: " + ex.Message);
             }
             finally
             {
@@ -145,13 +145,14 @@ namespace ABC_car_traders.View
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            String status = "PENDING";
             if (dataGridOrder.Rows.Count == 0)
             {
                 MessageBox.Show("Please add order item");
                 return;  
             }
             string todayStr = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            int ordId = insertCustomerOrder(UserClass.UserId, lblTotalPrice.Text, todayStr);
+            int ordId = insertCustomerOrder(UserClass.UserId, lblTotalPrice.Text, todayStr, status);
 
             for (int item = 0; item < dataGridOrder.Rows.Count - 1; item++)
             {
@@ -170,16 +171,17 @@ namespace ABC_car_traders.View
         }
 
         /*customerOrder eka save karana thena*/
-        private int insertCustomerOrder(int customerId, string total, string todayStr)
+        private int insertCustomerOrder(int customerId, string total, string todayStr, string status)
         {
             DBManager dbManager = DBManager.GetInstance();
             int insertedId = -1; // Initialize with a default value
             try
             {
-                string insertQuery = "INSERT INTO customerorder (customer_id, total_price, created_at) values(" +
+                string insertQuery = "INSERT INTO customerorder (customer_id, total_price, created_at, status) values(" +
                     "'" + customerId + "', " +
                     "'" + total + "', " +
-                    "'" + todayStr + "'" +
+                    "'" + todayStr + "', " +
+                    "'" + status + "'" +
                     ");"; // Retrieve the last inserted ID
 
                 dbManager.OpenConnection();

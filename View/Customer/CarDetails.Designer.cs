@@ -31,7 +31,7 @@
             txtSearchKey = new TextBox();
             label1 = new Label();
             btnSearch = new Button();
-            dataGridView1 = new DataGridView();
+            customerCarGridView1 = new DataGridView();
             Brand = new DataGridViewTextBoxColumn();
             model = new DataGridViewTextBoxColumn();
             manu_year = new DataGridViewTextBoxColumn();
@@ -42,7 +42,7 @@
             price = new DataGridViewTextBoxColumn();
             transmission = new DataGridViewTextBoxColumn();
             fuel_type = new DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)customerCarGridView1).BeginInit();
             SuspendLayout();
             // 
             // txtSearchKey
@@ -69,16 +69,17 @@
             btnSearch.TabIndex = 8;
             btnSearch.Text = "Search";
             btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
             // 
-            // dataGridView1
+            // customerCarGridView1
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Brand, model, manu_year, regi_year, body_type, capacity, color, price, transmission, fuel_type });
-            dataGridView1.Location = new Point(12, 125);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(707, 428);
-            dataGridView1.TabIndex = 9;
+            customerCarGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            customerCarGridView1.Columns.AddRange(new DataGridViewColumn[] { Brand, model, manu_year, regi_year, body_type, capacity, color, price, transmission, fuel_type });
+            customerCarGridView1.Location = new Point(12, 125);
+            customerCarGridView1.Name = "customerCarGridView1";
+            customerCarGridView1.RowHeadersWidth = 51;
+            customerCarGridView1.Size = new Size(707, 428);
+            customerCarGridView1.TabIndex = 9;
             // 
             // Brand
             // 
@@ -156,15 +157,15 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 0, 192);
             ClientSize = new Size(731, 565);
-            Controls.Add(dataGridView1);
+            Controls.Add(customerCarGridView1);
             Controls.Add(btnSearch);
             Controls.Add(label1);
             Controls.Add(txtSearchKey);
             FormBorderStyle = FormBorderStyle.None;
             Name = "CarDetails";
             Text = "CarDetails";
-            Load += CarDetails_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            //Load += CarDetails_Load;
+            ((System.ComponentModel.ISupportInitialize)customerCarGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -174,7 +175,7 @@
         private TextBox txtSearchKey;
         private Label label1;
         private Button btnSearch;
-        private DataGridView dataGridView1;
+        private DataGridView customerCarGridView1;
         private DataGridViewTextBoxColumn Brand;
         private DataGridViewTextBoxColumn model;
         private DataGridViewTextBoxColumn manu_year;

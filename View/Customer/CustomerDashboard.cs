@@ -58,12 +58,12 @@ namespace ABC_car_traders.View
 
         private void label3_Click(object sender, EventArgs e)
         {
-
+            loadform(new PartsDetails());
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            
+            loadform(new PartsDetails());
         }
 
         private void OrderDetails_Paint(object sender, PaintEventArgs e)

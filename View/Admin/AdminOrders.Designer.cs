@@ -31,25 +31,24 @@
             panel7 = new Panel();
             tabControl1 = new TabControl();
             tabPage2 = new TabPage();
+            label1 = new Label();
+            comboBox1 = new ComboBox();
             label15 = new Label();
             textBox11 = new TextBox();
             label14 = new Label();
-            dataGridView1 = new DataGridView();
-            comboBox1 = new ComboBox();
-            label1 = new Label();
+            orderDetailGrid = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
+            OrderId = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             Column10 = new DataGridViewTextBoxColumn();
-            Column11 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
-            Column7 = new DataGridViewTextBoxColumn();
+            deleiverd = new DataGridViewButtonColumn();
+            onProgress = new DataGridViewButtonColumn();
             panel7.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)orderDetailGrid).BeginInit();
             SuspendLayout();
             // 
             // panel7
@@ -78,13 +77,30 @@
             tabPage2.Controls.Add(label15);
             tabPage2.Controls.Add(textBox11);
             tabPage2.Controls.Add(label14);
-            tabPage2.Controls.Add(dataGridView1);
+            tabPage2.Controls.Add(orderDetailGrid);
             tabPage2.Location = new Point(4, 29);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
             tabPage2.Size = new Size(797, 620);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "View All Orders";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(684, 41);
+            label1.Name = "label1";
+            label1.Size = new Size(91, 20);
+            label1.TabIndex = 5;
+            label1.Text = "Order Status";
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(555, 64);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(220, 28);
+            comboBox1.TabIndex = 4;
             // 
             // label15
             // 
@@ -112,32 +128,16 @@
             label14.TabIndex = 1;
             label14.Text = "View Order Details";
             // 
-            // dataGridView1
+            // orderDetailGrid
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column5, Column4, Column10, Column11, Column6, Column7 });
-            dataGridView1.Location = new Point(1, 115);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(797, 505);
-            dataGridView1.TabIndex = 0;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(555, 64);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(220, 28);
-            comboBox1.TabIndex = 4;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(684, 41);
-            label1.Name = "label1";
-            label1.Size = new Size(91, 20);
-            label1.TabIndex = 5;
-            label1.Text = "Order Status";
+            orderDetailGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            orderDetailGrid.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, OrderId, Column5, Column4, Column10, deleiverd, onProgress });
+            orderDetailGrid.Location = new Point(1, 115);
+            orderDetailGrid.Name = "orderDetailGrid";
+            orderDetailGrid.RowHeadersWidth = 51;
+            orderDetailGrid.Size = new Size(797, 505);
+            orderDetailGrid.TabIndex = 0;
+            orderDetailGrid.CellClick += updateOrderDetails;
             // 
             // Column1
             // 
@@ -148,59 +148,56 @@
             // 
             // Column2
             // 
-            Column2.HeaderText = "OrderID";
+            Column2.HeaderText = "CustomerName";
             Column2.MinimumWidth = 6;
             Column2.Name = "Column2";
             Column2.Width = 125;
             // 
-            // Column3
+            // OrderId
             // 
-            Column3.HeaderText = "Car Edition/Spare Part Name";
-            Column3.MinimumWidth = 6;
-            Column3.Name = "Column3";
-            Column3.Width = 125;
+            OrderId.HeaderText = "OrderId";
+            OrderId.MinimumWidth = 6;
+            OrderId.Name = "OrderId";
+            OrderId.Width = 125;
             // 
             // Column5
             // 
-            Column5.HeaderText = "Brand";
+            Column5.HeaderText = "TotalPrice";
             Column5.MinimumWidth = 6;
             Column5.Name = "Column5";
             Column5.Width = 125;
             // 
             // Column4
             // 
-            Column4.HeaderText = "Model";
+            Column4.HeaderText = "Date";
             Column4.MinimumWidth = 6;
             Column4.Name = "Column4";
             Column4.Width = 125;
             // 
             // Column10
             // 
-            Column10.HeaderText = "Colour";
+            Column10.HeaderText = "Status";
             Column10.MinimumWidth = 6;
             Column10.Name = "Column10";
             Column10.Width = 125;
             // 
-            // Column11
+            // deleiverd
             // 
-            Column11.HeaderText = "Quantity";
-            Column11.MinimumWidth = 6;
-            Column11.Name = "Column11";
-            Column11.Width = 125;
+            deleiverd.HeaderText = "Action";
+            deleiverd.MinimumWidth = 6;
+            deleiverd.Name = "deleiverd";
+            deleiverd.Text = "Delivered";
+            deleiverd.UseColumnTextForButtonValue = true;
+            deleiverd.Width = 125;
             // 
-            // Column6
+            // onProgress
             // 
-            Column6.HeaderText = "Unit Price";
-            Column6.MinimumWidth = 6;
-            Column6.Name = "Column6";
-            Column6.Width = 125;
-            // 
-            // Column7
-            // 
-            Column7.HeaderText = "Sub Total";
-            Column7.MinimumWidth = 6;
-            Column7.Name = "Column7";
-            Column7.Width = 125;
+            onProgress.HeaderText = "Action";
+            onProgress.MinimumWidth = 6;
+            onProgress.Name = "onProgress";
+            onProgress.Text = "OnProgress";
+            onProgress.UseColumnTextForButtonValue = true;
+            onProgress.Width = 125;
             // 
             // AdminOrders
             // 
@@ -216,7 +213,7 @@
             tabControl1.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)orderDetailGrid).EndInit();
             ResumeLayout(false);
         }
 
@@ -228,17 +225,16 @@
         private Label label15;
         private TextBox textBox11;
         private Label label14;
-        private DataGridView dataGridView1;
+        private DataGridView orderDetailGrid;
         private Label label1;
         private ComboBox comboBox1;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn OrderId;
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column10;
-        private DataGridViewTextBoxColumn Column11;
-        private DataGridViewTextBoxColumn Column6;
-        private DataGridViewTextBoxColumn Column7;
+        private DataGridViewButtonColumn deleiverd;
+        private DataGridViewButtonColumn onProgress;
     }
 }

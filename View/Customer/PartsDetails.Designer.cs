@@ -28,16 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtSearchKey = new TextBox();
+            txtSearchPartsKey = new TextBox();
             btnSearch = new Button();
+            label1 = new Label();
+            customPartsGridView1 = new DataGridView();
+            brand = new DataGridViewTextBoxColumn();
+            model = new DataGridViewTextBoxColumn();
+            name = new DataGridViewTextBoxColumn();
+            description = new DataGridViewTextBoxColumn();
+            quantity = new DataGridViewTextBoxColumn();
+            price = new DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)customPartsGridView1).BeginInit();
             SuspendLayout();
             // 
-            // txtSearchKey
+            // txtSearchPartsKey
             // 
-            txtSearchKey.Location = new Point(43, 70);
-            txtSearchKey.Name = "txtSearchKey";
-            txtSearchKey.Size = new Size(510, 27);
-            txtSearchKey.TabIndex = 5;
+            txtSearchPartsKey.Location = new Point(43, 70);
+            txtSearchPartsKey.Name = "txtSearchPartsKey";
+            txtSearchPartsKey.Size = new Size(510, 27);
+            txtSearchPartsKey.TabIndex = 5;
             // 
             // btnSearch
             // 
@@ -47,25 +56,98 @@
             btnSearch.TabIndex = 9;
             btnSearch.Text = "Search";
             btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(43, 37);
+            label1.Name = "label1";
+            label1.Size = new Size(90, 20);
+            label1.TabIndex = 10;
+            label1.Text = "Enter Model";
+            // 
+            // customPartsGridView1
+            // 
+            customPartsGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            customPartsGridView1.Columns.AddRange(new DataGridViewColumn[] { brand, model, name, description, quantity, price });
+            customPartsGridView1.Location = new Point(12, 126);
+            customPartsGridView1.Name = "customPartsGridView1";
+            customPartsGridView1.RowHeadersWidth = 51;
+            customPartsGridView1.Size = new Size(707, 427);
+            customPartsGridView1.TabIndex = 11;
+            // 
+            // brand
+            // 
+            brand.HeaderText = "Brand";
+            brand.MinimumWidth = 6;
+            brand.Name = "brand";
+            brand.Width = 125;
+            // 
+            // model
+            // 
+            model.HeaderText = "Model";
+            model.MinimumWidth = 6;
+            model.Name = "model";
+            model.Width = 125;
+            // 
+            // name
+            // 
+            name.HeaderText = "Name";
+            name.MinimumWidth = 6;
+            name.Name = "name";
+            name.Width = 125;
+            // 
+            // description
+            // 
+            description.HeaderText = "Description";
+            description.MinimumWidth = 6;
+            description.Name = "description";
+            description.Width = 125;
+            // 
+            // quantity
+            // 
+            quantity.HeaderText = "Quantity";
+            quantity.MinimumWidth = 6;
+            quantity.Name = "quantity";
+            quantity.Width = 125;
+            // 
+            // price
+            // 
+            price.HeaderText = "Price";
+            price.MinimumWidth = 6;
+            price.Name = "price";
+            price.Width = 125;
             // 
             // PartsDetails
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 0, 192);
-            ClientSize = new Size(713, 518);
+            ClientSize = new Size(731, 565);
+            Controls.Add(customPartsGridView1);
+            Controls.Add(label1);
             Controls.Add(btnSearch);
-            Controls.Add(txtSearchKey);
+            Controls.Add(txtSearchPartsKey);
             FormBorderStyle = FormBorderStyle.None;
             Name = "PartsDetails";
             Text = "PartsDetails";
+            ((System.ComponentModel.ISupportInitialize)customPartsGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private TextBox txtSearchKey;
+        private TextBox txtSearchPartsKey;
         private Button btnSearch;
+        private Label label1;
+        private DataGridView customPartsGridView1;
+        private DataGridViewTextBoxColumn brand;
+        private DataGridViewTextBoxColumn model;
+        private DataGridViewTextBoxColumn name;
+        private DataGridViewTextBoxColumn description;
+        private DataGridViewTextBoxColumn quantity;
+        private DataGridViewTextBoxColumn price;
     }
 }
